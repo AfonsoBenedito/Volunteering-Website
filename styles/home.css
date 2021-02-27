@@ -1,0 +1,167 @@
+.resumoApp{
+    position:relative;
+    display: block;
+    width: 70%;
+    left: 15%;
+    height: fit-content;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.resumoApp a{
+    opacity: .85;
+}
+
+.resumoApp a:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+
+.resumoApp h1{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.resumoApp p{
+    font-weight: 200;
+    font-size: 25px;
+}
+
+@media all and (max-width: 750px){
+    .resumoApp{
+        width: 80%;
+        left: 10%;
+    }
+    
+    .resumoApp h1{
+        font-size: 7vw;
+    }
+    
+    .resumoApp p{
+        font-size: 3.5vw;
+    }
+}
+
+.principalBlocks{
+    position:relative;
+    display: block;
+    left: 0%;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.principalBlocks li{
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    height: 400px;
+    background-color: white;
+    transition: .2s;
+    text-align: center;
+    overflow: hidden;
+}
+
+.principalBlocks li:nth-child(2) {
+    margin-right: .75%;
+    margin-left: .75%;
+}
+
+.zonaTextoCartao{
+    position: absolute;
+    left:0px;
+    top: 60%;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+}
+
+.centerTextCartao{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width:95%;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+}
+
+.principalBlocks h1{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.principalBlocks p{
+    font-weight: 200;
+    font-size: 15px;
+}
+
+@media all and (max-width: 850px){
+
+    .principalBlocks li{
+        display: block;
+        width: 80%;
+        height: 60vw;
+        left:10%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .principalBlocks li:nth-child(2) {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+
+.imgCartao{
+    height:60%;
+    width: 100%;
+    left:0px;
+    top:0px;
+    background-size: cover;
+}
+
+.imgCartao.um{
+    background-image: url(../assets/Imagens/cartao1.jpg);
+}
+
+.imgCartao.dois{
+    background-image: url(../assets/Imagens/cartao2.jpg);
+}
+
+.imgCartao.tres{
+    background-image: url(../assets/Imagens/cartao3.jpg);
+}
+
+.btnCartao{
+    position: relative;
+    bottom: 14px;
+    background-color: rgb(0,14,20);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 100px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: .2s;
+    z-index: 2;
+}
+
+.btnCartao:hover{
+    background-color: rgb(0, 171, 131);
+    cursor: pointer;
+}
+
+@media all and (max-width: 500px){
+    .principalBlocks h1{
+        font-size: 4vw;
+    }
+
+    .btnCartao{
+        bottom: 15px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,513 @@
+*{
+    font-family: 'Oswald', sans-serif; /* font-weight: 200 ou 600;*/
+    margin: 0;
+    padding: 0;
+    color:rgb(0,14,20);
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    cursor: default;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*---------- BACKGROUND ----------*/
+.background{
+    background-image: url(../assets/Imagens/img3.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.principalText{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    width: 80vw;
+    text-align: center;
+    /* background-color: aquamarine; */
+}
+
+.principalText h1{
+    font-size: 4vw;
+    color: white;
+}
+
+.principalText h1 li{
+    position: relative;
+    display: inline-block;
+    color:white;
+    margin-left: -.5vw;
+    margin-right: -.5vw;
+}
+
+.principalText h1 li:hover{
+    color: rgb(0, 171, 131) !important;
+}
+
+.elasticEffect{
+    animation-name: elasticText;
+    animation-duration: 0.8s;
+    transition: .1s;
+}
+
+.principalText h3{
+    font-size: 2vw;
+    font-weight: 200;
+    color: white;
+}
+
+.btnPrincipal{
+    background-color: rgb(0,14,20);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 100px;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+.btnPrincipal:hover{
+    background-color: rgb(0, 171, 131);
+    cursor: pointer;
+}
+
+/*---------- BARRA SUPERIOR ----------*/
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 140px; /* after height: 100px;*/
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: .2s;
+    z-index:1
+}
+
+.logo{
+    position: absolute;
+    width: 50px;
+    height: 60%;
+    top: 20%;
+    left: 10%;
+    text-align: center;
+    border-top: 2px solid rgb(0, 171, 131);
+}
+
+.logo h1{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white; 
+}
+
+.logo img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: auto;
+    cursor: pointer;
+}
+
+nav{
+    position: absolute;
+    width: 70%;
+    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    right: 10%;
+    text-align: right;
+    /*border-top: 2px solid rgb(0, 255, 229);*/
+    overflow: visible;
+}
+
+nav button{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin-left: 5%;
+    border: none;
+    background-color: rgba(0, 255, 229, 0);
+    font-size: large;
+    font-weight: 200;
+    overflow: visible;
+    color:white;
+    vertical-align: center;
+}
+
+.btnEntrar{
+    background-color: rgb(0, 171, 131);
+    padding-left: 15px;
+    padding-right: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white !important;
+}
+
+/*---------- CONTEUDO PAGINA - ABAIXO DA IMAGEM ----------*/
+main{
+    position: absolute;
+    top:102%;
+    left:0px;
+    height:fit-content;
+    width: 100%;
+}
+
+/*---------------------- FOOTER ---------------------*/
+
+footer{
+    position:relative;
+    display: block;
+    width:100%;
+    height:170px;
+    background-color: rgb(0,14,20);
+}
+
+.sepFooter{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 20px;
+    background: rgb(0, 171, 131);
+}
+
+/*##################################################*/
+
+/*---------------------- POP UP LOGIN ---------------------*/
+
+.popUpLoginBackground{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+    visibility: hidden;
+}
+
+.popUpLogin{
+    position: fixed;
+    width: 760px;
+    height: 550px;
+    top:110px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+    background-color: white;
+    visibility: hidden;
+}
+
+.zonaLogin{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left:0%;
+    top:0%;
+}
+
+.loginCenter{
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    left:10%;
+    top:7.5%;
+}
+
+.zonaLogin h1,.zonaLogin h2,.zonaLogin input,.zonaLogin a{
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 100 !important;
+}
+
+.zonaLogin h1{
+    color: rgb(0, 171, 131) !important;
+    font-size: 30px;
+}
+
+.zonaLogin h2{
+    font-size: 20px;
+}
+
+.zonaLogin input{
+    font-size: 20px;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 8px;
+}
+
+.entrarLogin{
+    position: relative;
+    width: 35% !important;
+    border-radius: 50px;
+    border: none !important;
+    text-align: center;
+    left:50%;
+    transform: translate(-50%,0%);
+    background-color: rgb(0,14,20);
+    color: aliceblue !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.zonaLogin a{
+    font-size: 15px;
+    text-decoration: underline !important;
+    font-style: italic;
+}
+
+.zonaRegistar{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left:60%;
+    top:0%;
+    background-color: rgb(0,14,20);
+    background-image: url(../assets/Imagens/register.jpg);
+    background-size: cover;
+}
+
+.registarCenter{
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    left:10%;
+    top:7.5%;
+    text-align: center;
+}
+
+.zonaRegistar p,.zonaRegistar b {
+    color:white !important;
+}
+
+.zonaRegistar h2,.zonaRegistar input,.zonaRegistar a{
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 100 !important;
+    color: white !important;
+    text-align: center;
+}
+
+.zonaRegistar input:hover{
+    background-color: rgb(0, 135, 103);
+}
+
+.zonaRegistar h1{
+    font-size: 30px;
+    font-weight: 100 !important;
+    color: white !important;
+    text-align: center;
+}
+
+.zonaRegistar input{
+    font-size: 20px;
+    width: 80%;
+    margin-left:10%;
+    border-radius: 50px;
+    border: none;
+    padding: 8px;
+    background-color: rgb(0, 171, 131);
+    cursor: pointer;
+}
+
+.registarCenter img{
+    width: 80%;
+    height: auto;
+    margin-left:10%;
+    opacity: .3;
+}
+
+.zonaFechar{
+    position: absolute;
+    top:-25px;
+    float:right;
+    right: 25px;
+    background-color: rgb(0,14,20);
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#exitLogin{
+    z-index: 50;
+    position: absolute;
+    top:-1px;
+    left:-0.5px;
+    width:52px; 
+    height:52px;
+    fill: white;
+    cursor: pointer;
+}
+
+@media all and (max-width: 850px){
+    .popUpLogin{
+        width: 600px;
+    }
+}
+
+@media all and (max-width: 700px){
+    .popUpLogin{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 600px){
+    .popUpLogin{
+        width: 90%;
+        height: fit-content;
+    }
+
+    .zonaLogin{
+        width: 100%;
+        height: 80vw;
+        background-color: white;
+    }
+
+    .zonaRegistar{
+        width: 100%;
+        height: 50vw;
+        left:0px;
+        top:80vw;
+    }
+
+    .registarCenter img{
+        visibility: hidden;
+    }
+}
+
+/*##################################################*/
+
+.perfilButton{
+    height: 35px;
+    width:35px;
+    background-color: brown;
+    background-image: url(../assets/Imagens/img1.jpg);
+    background-size: cover;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0) !important;
+}
+
+.backMenuPerfil{
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left:0px;
+    z-index: 10;
+}
+
+.menuPerfil{
+    visibility: hidden;
+    position: fixed;
+    width: 200px;
+    height: fit-content;
+    float: right;
+    right: 8%;
+    top: 85px;
+    background-color: white;
+    border-radius: 4px;
+    z-index:11;
+    box-shadow: 1px 1px 5px rgba(218, 218, 218, 0.762);
+    overflow: hidden;
+}
+
+.apontadorPerfil{
+    visibility: hidden;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    left:7.5px;
+    transform: rotate(45deg);
+    bottom: -15px;
+    background-color: white;
+    box-shadow: 1px 1px 3px 3px rgba(218, 218, 218, 0.762);
+}
+
+.menuPerfil a{
+    text-decoration: none;
+}
+
+.menuPerfil li{
+    position: relative;
+    display: block;
+    width:100%;
+    height: 45px;
+    padding: 10px;
+}
+
+.lastMenuLi{
+    border-top: 1px solid rgba(126, 126, 126, 0.5);
+}
+
+.menuPerfil li:hover{
+    background-color: rgba(216, 216, 216, 0.15);
+    cursor: pointer;
+}
+
+.menuPerfil li h3{
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    top:0px;
+    width: fit-content;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#iconBtnPerfil{
+    position: relative;
+    display: inline-block;
+    width:18px; 
+    height:18px;
+    fill:currentColor;
+    cursor: pointer;
+}
+/*-------------------- KEYFRAMES ANOMATIONS --------------------*/
+
+@keyframes rotateAnimation {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg)}
+}
+
+@keyframes elasticText {
+    0%{transform: scale(1, 1);}
+
+    50%{transform: scale(1.1, 0.7);}
+
+    60%{transform: scale(0.95, 1.1);}
+
+    80%{transform: scale(1.05, 0.85);}
+
+    90%{transform: scale(1, 1);}
+
+    95%{transform: scale(1.03, 0.98);}
+
+    100%{transform: scale(1, 1);}
+}
+
+/*-----------------------------------*/
+
+
+footer a{
+    position: relative;
+    display: block;
+    color: white !important;
+    font-size: 10px;
+    margin-left:20px;
+    margin-bottom: 2.5px;
+    cursor: pointer;
+}
+
+
+

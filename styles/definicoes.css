@@ -1,0 +1,224 @@
+*{
+    color:rgb(0,14,20) !important;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100px; /* after height: 100px;*/
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: .2s;
+    z-index:1
+}
+
+main{
+    position: absolute;
+    top:130px;
+    height:fit-content;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.conteudoPrincipal{
+    position: relative;
+    display: block;
+    left:50%;
+    transform: translate(-50%);
+    width: 940px;
+    height: 850px;
+    min-height: 600px;
+    background-color: white;
+    border: 1px solid rgb(176, 176, 176, 0.8);
+    border-radius: 2px;
+    margin-bottom: 100px;
+}
+
+.btnPrincipaisEditar{
+    position: absolute;
+    width:26%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    background-color: none;
+    border-right: 1px solid rgb(176, 176, 176, 0.8);
+}
+
+.btnPrincipaisEditar li{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 55px;
+    margin-bottom: 1px;
+}
+
+.btnPrincipaisEditar li h3{
+    font-weight: 200;
+}
+
+.fotoPerfilDef{
+    position: relative;
+    top:0px;
+    width:50px;
+    height: 50px;
+    float: right;
+    border-radius: 100px;
+    right: 0px;
+    background-image: url(../assets/Imagens/img1.jpg);
+    background-size: cover;
+}
+
+.nomeUserDef{
+    font-size: 20px;
+}
+
+.btnAlterarFoto{
+    font-size: 13px;
+    font-weight: 800;
+    width: fit-content;
+    color: rgb(0, 171, 131) !important;
+    cursor: pointer;
+}
+
+.btnUsed{
+    background-color: none !important;
+    border-left:2px solid rgb(0,14,20) !important;
+}
+
+.btnUsed h3{
+    font-weight: 800 !important;
+}
+
+.btnPrincipaisEditar li:hover{
+    background-color: rgba(216, 216, 216, 0.1);
+    border-left: 3px solid rgba(176, 176, 176, 0.4);
+    cursor:pointer;
+}
+
+.btnPrincipaisEditar li:hover h3{
+    left: 37px;
+    cursor: pointer;
+}
+
+.btnUsed:hover h3{
+    left: 40px !important;
+}
+
+.btnPrincipaisEditar li h3{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    text-align: left;
+}
+
+.zonaEdicaoPerfil, .zonaEdicaoDados, .zonaEdicaoPass, .zonaEdicaoEmail{
+    position: absolute;
+    width: 60%;
+    left: 30%;
+    height: fit-content;
+    top:25px;
+}
+
+.zonaEdicaoPerfil{
+    visibility: visible;
+}
+
+.zonaEdicaoDados, .zonaEdicaoPass, .zonaEdicaoEmail{
+visibility: hidden;
+}
+
+.zonaEdicaoPerfil li, .zonaEdicaoDados li, .zonaEdicaoPass li, .zonaEdicaoEmail li{
+    position: relative;
+    display: block;
+    height: fit-content;
+    min-height: 60px;
+    width: 100%;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.zonaEdicao li:first-child{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.zonaEdicaoEsq{
+    position: relative;
+    display: inline-block;
+    width:25%;
+    margin-left: 5%;
+    margin-right: 3.5%;
+    height: fit-content;
+    text-align: right;
+    vertical-align: top;
+}
+
+
+.zonaEdicaoDir{
+    position: relative;
+    display: inline-block;
+    width:65%;
+    height: 40px;
+    text-align: left;
+}
+
+.zonaEdicaoEsq h2{
+    position: relative;
+    top:5px;
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.zonaEdicaoDir input{
+    padding: 10px;
+    height: 15px;
+    width: 100%;
+    background: none;
+    border: 1px solid rgb(176, 176, 176, 0.8);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.zonaEdicaoDir p{
+    font-family: sans-serif !important;
+    font-size: 11px;
+    color: rgb(176, 176, 176, 0.8) !important;
+    margin-bottom: 5px;
+}
+.zonaEdicaoDir h6{
+    font-family: sans-serif !important;
+    font-size: 13px;
+    font-weight: 800;
+    color: rgb(176, 176, 176, 0.8) !important;
+    margin-bottom: 5px;
+}
+
+.zonaEdicaoDir select{
+    padding: 10px;
+    height: 30px;
+    width: 100%;
+    background: none;
+    border: 1px solid rgb(176, 176, 176, 0.8);
+    border-radius: 2px;
+    margin-bottom: 10px;
+    color: rgb(176, 176, 176, 0.8) !important;
+}
+
+.zonaEdicaoDir textarea{
+    padding: 10px;
+    height: 80px;
+    width: 100%;
+    background: none;
+    border: 1px solid rgb(176, 176, 176, 0.8);
+    border-radius: 2px;
+    margin-bottom: 10px;
+    color: rgb(176, 176, 176, 0.8) !important;
+    font-size: 15px;
+}
+

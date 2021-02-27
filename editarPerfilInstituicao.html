@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+
+        <!-- Geral CSS -->
+        <link rel="stylesheet" href="./styles/geral.css">
+        <link rel="stylesheet" href="./styles/definicoes.css">
+
+        <title>Editar Instituição</title>
+
+    </head>
+    
+    <body>
+
+        <header id="header">
+
+            <div class="logo">
+                <a href="home.html"><img id="logotipoImg" src="./assets/Icons/logoPreto.png"></a>
+                
+            </div>
+
+            <nav>
+                <button class="navBar">Voluntários</button>
+                <button class="navBar">Organizações</button>
+                <button class="navBar">Eventos</button>
+                <!--<button class="btnEntrar">Entrar</button>-->
+                <button class="perfilButton">foto
+                    <div class="apontadorPerfil"></div>
+                </button>
+            </nav>
+
+        </header>
+
+        <div class="backMenuPerfil"></div>
+
+        <div class="menuPerfil">
+            <a href="perfil.html"><li>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    id="iconBtnPerfil"
+                    class="bi bi-person-circle" 
+                    viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>
+                <h3>Perfil</h3>
+            </li></a>
+            <a href="editarPerfil.html"><li>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    id="iconBtnPerfil"
+                    class="bi bi-gear" 
+                    viewBox="0 0 16 16">
+                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                  </svg>
+                <h3>Defenições</h3>
+            </li></a>
+            <a href="home.html"><li class="lastMenuLi">
+                <h3>Terminar sessão</h3>
+            </li></a>
+        </div>
+
+        </header>
+
+        <main>
+            <div class="conteudoPrincipal" style="height: 600px !important;">
+                <div class="btnPrincipaisEditar">
+                    <li id="editarPerfilInstituicao" class="btnUsed">
+                        <h3>Editar Perfil</h3>
+                    </li>
+                    <li id="editarDadosInstituicao">
+                        <h3>Dados utilizador</h3>
+                    </li>
+                    <li id="editarPassInstituicao">
+                        <h3>Alterar palavra-passe</h3>
+                    </li>
+                    <li id="editarEmailInstituicao">
+                        <h3>Alterar email</h3>
+                    </li>
+                </div>
+
+                <!-- ZONA EDIÇÃO PERFIL -->
+                <div class="zonaEdicaoPerfil">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">Tomás Ndlate</h1>
+                            <h4 class="btnAlterarFoto">Alterar foto de perfil</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Nome da Instituição</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Alterar Nome">
+                            <br>
+                            <p>Ajuda as pessoas a encontrar a tua instituição. Este será o nome do teu
+                                perfil.
+                            </p>
+                        
+                            <!-- <p>VoluntárioCOVID19, ajuda o mundo.</p> -->
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Descrição</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <textarea name="comment" form="usrform"></textarea>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2></h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h6>Preferencias da Instituição</h6>
+                            <p>Ajuda-nos a saber quais são as tuas preferencias, de modo a 
+                                proporcionar-te um maior alcance perante o teu público.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Localidade</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Localidade">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Contacto</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Telefone">
+                        </div>
+                    </li>
+                </div>
+
+
+                <!-- ZONA EDIÇÃO DADOS -->
+                <div class="zonaEdicaoDados">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">Tomás Ndlate</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Localidade Residencia</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Localidade">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Telemóvel</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Telemóvel">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>CC / nº Cartão Cidadão</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Cartão Cidadão">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Indicação da Carta de condução</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" id="fname" name="fname" placeholder="Cartão Cidadão">
+                        </div>
+                    </li>
+                </div>
+
+                <!-- ZONA EDIÇÃO PASSWORD -->
+                <div class="zonaEdicaoPass">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">Tomás Ndlate</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Palavra-passe atual</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" id="fname" name="fname" placeholder="Palavra-passe atual">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Nova palavra-passe</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" id="fname" name="fname" placeholder="Nova palavra-passe">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Confirmar nova palavra-passe</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" id="fname" name="fname" placeholder="Confirmar nova palavra-passe">
+                        </div>
+                    </li>
+                </div>
+
+                <!-- ZONA EDIÇÃO EMAIL -->
+                <div class="zonaEdicaoEmail">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">Tomás Ndlate</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Email atual</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="email" id="fname" name="fname" placeholder="Email atual">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Nova email</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" id="fname" name="fname" placeholder="Nova email">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <h2>Confirmar nova email</h2>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" id="fname" name="fname" placeholder="Confirmar nova email">
+                        </div>
+                    </li>
+                </div>
+
+            </div>
+
+            <footer>
+                <div class="sepFooter"></div>
+                <a href="home.html">Home</a>
+                <a href="inscreverInstituicao.html">Inscrever Instituição</a>
+                <a href="inscreverVoluntario.html">Inscrever Voluntário</a>
+                <a href="perfil.html">Perfil Voluntario</a>
+                <a href="perfilInstituicao.html">Perfil Instituição</a>
+                <a href="editarPerfil.html">Editar Perfil</a>
+                <a href="editarDados.html">Editar Dados</a>
+                <a href="editarPass.html">Editar Pass</a>
+                <a href="editarEmail.html">Editar Email</a>
+            </footer>
+        </main>
+        
+        
+        <!--<script src="base.js"></script>-->
+        <script src="scripts/perfilAtivo.js"></script>
+        <script src="scripts/editarInstituicao.js"></script>
+        
+
+    </body>
+    </html>

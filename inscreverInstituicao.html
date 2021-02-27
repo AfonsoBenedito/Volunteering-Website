@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+
+        <!-- Bootstraap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <!-- Geral CSS -->
+        <link rel="stylesheet" href="styles/geral.css">
+        <link rel="stylesheet" href="styles/inscrever.css">
+
+        <title>Inscrever Instituição</title>
+
+    </head>
+    
+    <body>
+    
+        <!------------- LOGIN --------------->
+        <div class="popUpLoginBackground"></div>
+        <div class="popUpLogin">
+
+            <div class="zonaLogin">
+                <div class="loginCenter">
+                    <h1>Autenticação</h1>
+                    <br>
+                    <h2>Email</h2>
+                    <input type="text" id="fname" name="fname" placeholder="Email">
+                    <br><br>
+                    <h2>Palavra-passe</h2>
+                    <input type="text" id="fname" name="fname" placeholder="Palavra-passe">
+                    <br><br><br>
+                    <input class="entrarLogin" type="input" value="Entrar">
+                    <br><br>
+                    <a>Esqueceu-se da sua palavra-passe?</a>
+                </div>
+            </div>
+            <div class="zonaRegistar">
+                <div class="registarCenter">
+                    <h1>Sem registo?</h1>
+                    <br>
+                    <p>Sou novo na voluntárioCOVID19</p>
+                    <p><b>Quero registar-me como:</b></p>
+                    <br>
+                    <br>
+                    <a href="inscreverVoluntario.html"><input type="submit" value="Voluntário"></a>
+                    <br><br>
+                    <a href="inscreverInstituicao.html"><input type="submit" value="Organização"></a>
+                </div>
+            </div>
+
+            <div class="zonaFechar">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    
+                    id="exitLogin"
+                    fill="currentColor" 
+                    class="bi bi-x-circle" 
+                    viewBox="0 0 16 16">
+
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 
+                    0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+
+        </div>
+
+        <!-------------------------------------->
+
+        <header id="header">
+            <div class="logo">
+                <!--<h1 class="navBar">VoluntárioCOVID19</h1>-->
+                <a href="home.html"><img id="logotipoImg" src="logoPreto.png"></a>
+                
+            </div>
+
+            <nav>
+                <button class="navBar">Voluntários</button>
+                <button class="navBar">Organizações</button>
+                <button class="navBar">Eventos</button>
+                <button class="btnEntrar">Entrar</button>
+            </nav>
+        </header>
+
+        <main>
+        <div class="zonaInscrição">
+            <div class="zonaImgRegistar" style="background-image:url(zonaRegisto3.jpg);">
+                <h3>Inscrever</h3>
+                <h1>Instituição</h1>
+            </div>
+            <div class="formRegist">
+                <form action="">
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Nome Instituição</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="text" id="fname" name="fname" placeholder="Nome Instituição">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Email Instituição</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="email" id="fname" name="fname" placeholder="Email Instituição">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Nome do Representante</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="text" id="fname" name="fname" placeholder="Nome do Representante">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Apelido do Representante</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="text" id="fname" name="fname" placeholder="Apelido do Representante">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Email do Representante<br>
+                            <p>Utilizado para efetuar o login<p></h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="email" id="fname" name="fname" placeholder="Email do Representante">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Palavra-passe</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="password" id="fname" name="fname" placeholder="Palavra-passe">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="formEsq">
+                            <h3>Confirmar Palavra-passe</h3>
+                        </div>
+                        <div class="formDir">
+                            <input type="password" id="fname" name="fname" placeholder="Confirmar Palavra-passe">
+                        </div>
+                    </li>
+
+                    <li>
+                        <input class="btnFinalInscrever" type="submit" id="fname" name="fname" value="Inscrever">
+                    </li>
+                    
+                </form>
+            </div>
+            <a href="inscreverVoluntario.html"><h4>
+                Inscrever Voluntário
+                <svg xmlns="http://www.w3.org/2000/svg" class="setaNextPage" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </h4></a>
+        </div>
+
+        <footer>
+            <div class="sepFooter"></div>
+                <a href="home.html">Home</a>
+                <a href="inscreverInstituicao.html">Inscrever Instituição</a>
+                <a href="inscreverVoluntario.html">Inscrever Voluntário</a>
+                <a href="perfil.html">Perfil Voluntario</a>
+                <a href="perfilInstituicao.html">Perfil Instituição</a>
+                <a href="editarPerfil.html">Editar Perfil</a>
+                <a href="editarDados.html">Editar Dados</a>
+                <a href="editarPass.html">Editar Pass</a>
+                <a href="editarEmail.html">Editar Email</a>
+        </footer>
+    </main>
+        
+        
+        <script src="scripts/base.js"></script>
+        
+
+    </body>
+    </html>
