@@ -1,0 +1,270 @@
+*{
+    color:rgb(0,14,20) !important;
+
+    -webkit-touch-callout: none;  /* iPhone OS, Safari */
+    -webkit-user-select: none;    /* Chrome, Safari 3 */
+    -moz-user-select: none;       /* Firefox */
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100px; /* after height: 100px;*/
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: .2s;
+    z-index:1
+}
+
+main{
+    position: absolute;
+    top:130px;
+    left:0px;
+    height:fit-content;
+    width: 100%;
+    /*background-color: rgb(51, 255, 0);*/
+}
+
+.zonaPerfil{
+    position: relative;
+    display: block;
+    left:50%;
+    transform: translate(-50%, 0%);
+    width:1000px;
+    height:fit-content;
+}
+
+.zonasPerfil{
+    position: relative;
+    display: block;
+    width: 100%;
+    left:0px;
+    height: 150px;
+}
+
+.zonaFotoPerfil{
+    position: absolute;
+    left:0px;
+    top: 0px;
+    width: 30%;
+    height: 100%;
+    /*background-color: pink;*/
+}
+
+.fotoPerfil{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+<<<<<<< Updated upstream
+    background-image: url(../assets/Imagens/img3.jpg);
+=======
+    background-image: url(../assets/Imagens/img1.jpg);
+>>>>>>> Stashed changes
+    background-size: cover;
+    /*background-color: pink;*/
+    border-radius: 500px;
+}
+
+.zonaDescricaoPerfil{
+    position: absolute;
+    left:30%;
+    top: 0px;
+    width: 70%;
+    height: 100%;
+    /*background-color: crimson;*/
+    text-align: left;
+}
+
+.zonaDescricaoPerfil ul{
+    position: relative;
+    display: block;
+    width: 90%;
+    height: 25px;
+    /*background-color: yellow;*/
+    margin-bottom: 5px;
+}
+
+.zonaDescricaoPerfil ul:nth-child(2){
+    margin-bottom: 15px;
+    color: rgba(0, 14, 20, 0.85) !important;
+}
+
+.zonaDescricaoPerfil ul:first-child{
+    height: 45px;
+}
+
+.liCenterBio{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    /*background-color: burlywood;*/
+}
+
+.liCenterBio:first-child{
+    margin-right: 10px;
+}
+
+.nomePerfil{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    /*background-color: aqua;*/
+    margin-right: 10px;
+    font-size: 25px;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.editarPerfil{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    /*background-color: blueviolet;*/
+    padding: 3px;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    z-index: 20;
+}
+
+.editarPerfil:hover{
+    cursor: pointer;
+}
+
+.mostraEventosParticipou{
+    position: relative;
+    display: block;
+    min-height: 55vh;
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    /*background-color: rgb(226, 43, 195);*/
+    margin-top: 35px;
+    border-top: 1px solid rgba(154, 154, 154, 0.9);
+    text-align: left;
+}
+
+.mostraEventosParticipou li{
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    height: 140px;
+    margin-right: 1.5%;
+    margin-top: 15px;
+    background-color: aliceblue;
+}
+
+.mostraEventosParticipou li:nth-child(-n+3){
+    margin-top: 40px;
+}
+
+.mostraEventosParticipou li:nth-child(3n){
+    margin-right: 0px;
+    float: right;
+    right: 0px;
+}
+
+
+
+.fotoEventoPerfil{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    /*background-color: blue;*/
+    background-image: url(../assets/Imagens/img1.jpg);
+    background-size: cover;
+    transition: .4s;
+    z-index: 2;
+}
+
+.defEventoPerfil{
+    position: absolute;
+    width: 50%;
+    left:45%;
+    top:10px;
+    max-height: 80%;
+    height: fit-content;
+}
+
+.defEventoPerfil h1{
+    font-size: 20px;
+}
+
+.defEventoPerfil h3{
+    font-size: 15px;
+    opacity: .8;
+}
+
+.ativoDesativoPerfil, .ativoPerfil, .aDecorrerPerfil{
+    position: absolute;
+    width: 50%;
+    left:45%;
+    bottom:10px;
+    max-height: 20%;
+    height: fit-content;
+    background-color:rgb(62, 80, 66);
+}
+
+.ativoDesativoPerfil h3{
+    position: absolute;
+    left:0px;
+    font-size: 13px;
+    color: rgb(255, 38, 0) !important;
+    bottom: 0px;
+}
+
+/*----------- Fazer em js com ligação à bd -------------*/
+.ativoPerfil h3{
+    position: absolute;
+    left:0px;
+    font-size: 13px;
+    color: rgb(0, 227, 159) !important;
+    bottom: 0px;
+}
+
+.aDecorrerPerfil h3{
+    position: absolute;
+    left:0px;
+    font-size: 13px;
+    color: rgb(227, 181, 0) !important;
+    bottom: 0px;
+}
+
+/*------------------------------------------------------*/
+
+
+@media all and (max-width: 1020px){
+    .zonaPerfil{
+        width:98%;
+    }
+
+    .mostraEventosParticipou{
+        width:98%;
+    }
+}
+
+@media all and (max-width: 800px){
+    .defEventoPerfil h1{
+        font-size: 15px;
+    }
+    
+    .defEventoPerfil h3{
+        font-size: 13px;
+    }
+
+    .ativoDesativoPerfil h3{
+        font-size: 10px;
+    }
+}

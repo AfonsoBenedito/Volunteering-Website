@@ -1,0 +1,27 @@
+.descricaoInst{
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    left:0px;
+    height: fit-content;
+    text-align: center;
+}
+
+.zonaFotoInstituicao{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    background-image: url('../assets/Imagens/img3.jpg');
+    background-size: cover;
+}
+
+.descricaoInst h1{
+    font-size: 20px;
+}
+
+.descricaoInst h2{
+    font-size: 15px;
+}
