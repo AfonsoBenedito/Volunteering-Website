@@ -9,7 +9,7 @@ function paginaPerfil(){
     document.getElementById('editarPassVoluntario').classList.remove('btnUsed')
     document.getElementById('editarEmailVoluntario').classList.remove('btnUsed')
 
-    document.getElementsByClassName('conteudoPrincipal')[0].style.height = '850px'
+    document.getElementsByClassName('conteudoPrincipal')[0].style.height = '1050px'
 
 
 }
@@ -56,12 +56,35 @@ function paginaEmail(){
     document.getElementsByClassName('conteudoPrincipal')[0].style.height = '600px'
 }
 
+function abrirAlterarFoto(){
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].style.visibility="visible"
+    document.getElementsByClassName('popUpAlterarFoto')[0].style.visibility="visible"
+}
+
+function fecharAlterarFoto(){
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].style.visibility="hidden"
+    document.getElementsByClassName('popUpAlterarFoto')[0].style.visibility="hidden"
+
+}
+
+
+function autoSubmit(){
+    document.getElementById('formAlterarFoto').submit()
+}
+
 
 function onload(){
     document.getElementById('editarPerfilVoluntario').addEventListener('click', paginaPerfil)
     document.getElementById('editarDadosVoluntario').addEventListener('click', paginaDados)
     document.getElementById('editarPassVoluntario').addEventListener('click', paginaPassword)
     document.getElementById('editarEmailVoluntario').addEventListener('click', paginaEmail)
+
+    document.getElementsByClassName('btnAlterarFoto')[0].addEventListener('click', abrirAlterarFoto)
+
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].addEventListener('click', fecharAlterarFoto)
+    document.getElementsByClassName('cancelarAlterarFoto')[0].addEventListener('click', fecharAlterarFoto)
+
+    document.getElementById('carregarFoto').addEventListener('change', autoSubmit)
 }
 
 window.addEventListener('load',onload)

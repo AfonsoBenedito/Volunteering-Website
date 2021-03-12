@@ -50,12 +50,35 @@ function paginaEmail(){
 
 }
 
+function abrirAlterarFoto(){
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].style.visibility="visible"
+    document.getElementsByClassName('popUpAlterarFoto')[0].style.visibility="visible"
+}
+
+function fecharAlterarFoto(){
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].style.visibility="hidden"
+    document.getElementsByClassName('popUpAlterarFoto')[0].style.visibility="hidden"
+
+}
+
+
+function autoSubmit(){
+    document.getElementById('formAlterarFoto').submit()
+}
+
 
 function onload(){
     document.getElementById('editarPerfilInstituicao').addEventListener('click', paginaPerfil)
     document.getElementById('editarDadosInstituicao').addEventListener('click', paginaDados)
     document.getElementById('editarPassInstituicao').addEventListener('click', paginaPassword)
     document.getElementById('editarEmailInstituicao').addEventListener('click', paginaEmail)
+
+    document.getElementsByClassName('btnAlterarFoto')[0].addEventListener('click', abrirAlterarFoto)
+
+    document.getElementsByClassName('backgroundPopUpAlterarFoto')[0].addEventListener('click', fecharAlterarFoto)
+    document.getElementsByClassName('cancelarAlterarFoto')[0].addEventListener('click', fecharAlterarFoto)
+
+    document.getElementById('carregarFoto').addEventListener('change', autoSubmit)
 }
 
 window.addEventListener('load',onload)

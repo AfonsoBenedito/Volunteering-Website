@@ -1,0 +1,208 @@
+*{
+    color:rgb(0,14,20) !important;
+
+    -webkit-touch-callout: none;  /* iPhone OS, Safari */
+    -webkit-user-select: none;    /* Chrome, Safari 3 */
+    -moz-user-select: none;       /* Firefox */
+}
+
+body{
+    overflow-y: auto;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100px; /* after height: 100px;*/
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: .2s;
+    z-index:1
+}
+
+.apresentacaoVolInst{
+    position: absolute;
+    width: 90%;
+    max-width: 1400px;
+    height: 500px;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: aqua; */
+}
+
+.apresentacaoVolInst a{
+    position: relative;
+    display: inline-block;
+    width: 23%;
+    height: 200px;
+    margin-left: 1.25%;
+    background-color: white;
+    vertical-align: top;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.apresentacaoVolInst a:hover{
+    transform: scale(0.97);
+}
+
+.apresentacaoVolInst a button{
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(0, 171, 83);
+    color: white !important;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.apresentacaoVolInst a button:hover{
+    background-color: rgb(0, 150, 73);
+}
+
+.topUtilizadorCarta{
+    position: relative;
+    display: block;
+    height: 50%;
+    width: 100%;
+    /* background-color: blue; */
+    cursor: pointer;
+}
+
+.bottomUtilizadorCarta{
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: 100%;
+    /* background-color: rgb(0, 255, 51); */
+    text-align: center;
+    cursor: pointer;
+}
+
+.bottomUtilizadorCarta h3{
+    opacity: .8;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.zonaFotoCartaUti{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    /* background-color: brown; */
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.zonaNomesCartaUti{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 55%;
+    /* background-color: rgb(42, 56, 165); */
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.centerVerticalNomes{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* background-color: yellow; */
+    cursor: pointer;
+}
+
+.centerVerticalNomes h2 h3{
+    cursor: pointer;
+}
+
+.centerVerticalFoto{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* background-color: rgb(255, 111, 0); */
+    border-radius: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.centerVerticalFoto img{
+    position: relative;
+    top: 0px;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.centerVerticalFotoInst{
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 70px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* background-color: rgb(255, 111, 0); */
+    /* border-radius: 200px; */
+    overflow: hidden;
+    cursor: pointer;}
+
+.centerVerticalFotoInst img{
+    position: relative;
+    top: 0px;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+/* .centerVerticalNomes h2, h3{
+    vertical-align: bottom;
+} */
+
+
+@media all and (max-width: 1050px){
+    .apresentacaoVolInst a{
+        width: 40%;
+        height: 170px;
+        margin-left: 6%;
+    }
+}
+
+@media all and (max-width: 660px){
+
+    .apresentacaoVolInst{
+        text-align: center;
+    }
+
+    .apresentacaoVolInst a{
+        margin-left: auto;
+        width: 100%;
+        max-width: 300px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+}

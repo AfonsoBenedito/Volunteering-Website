@@ -17,6 +17,8 @@ function scrollFunction() {
         document.getElementById("logotipoImg").src = "assets/Icons/logoPreto.png"
         document.getElementById("header").style.height = "100px";
 
+        document.getElementsByClassName("menuPerfil")[0].style.top = '85px'
+
     } else {
 
         for(let i = 0; i < changeNumber ; i++){
@@ -26,15 +28,15 @@ function scrollFunction() {
         document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255, 0)";
         document.getElementById("logotipoImg").src = "assets/Icons/logoBranco.png"
         document.getElementById("header").style.height = "140px";
+
+        document.getElementsByClassName("menuPerfil")[0].style.top = '104px'
     }
 }
 
 let lista = document.querySelectorAll('.eEs li'); //.length;
 
-console.log(lista)
 
 for(i of lista){
-    console.log(i.id)
 
     i.onmouseenter = function(){
         this.classList.add('elasticEffect');

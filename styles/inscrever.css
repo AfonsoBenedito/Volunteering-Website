@@ -20,7 +20,7 @@ main{
 
 
 
-.zonaInscrição{
+.zonaInscricao{
     position:relative;
     display: block;
     margin-bottom: 50px;
@@ -116,6 +116,13 @@ main{
     text-align: left;
 }
 
+.formDir h6{
+    color: rgb(212, 0, 0) !important;
+    font-weight: 200;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
 .formDir input{
     width: 80%;
     height: 100%;
@@ -170,9 +177,9 @@ main{
 }
 
 @media all and (max-width: 850px){
-    .zonaInscrição{
+    .zonaInscricao{
         width:90%;
-        height: 1050px;
+        height: 950px;
         margin-bottom: 100px !important;
     }
 

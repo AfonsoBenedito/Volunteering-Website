@@ -28,7 +28,7 @@ main{
     left:50%;
     transform: translate(-50%);
     width: 940px;
-    height: 850px;
+    height: 1050px;
     min-height: 600px;
     background-color: white;
     border: 1px solid rgb(176, 176, 176, 0.8);
@@ -66,8 +66,14 @@ main{
     float: right;
     border-radius: 100px;
     right: 0px;
-    background-image: url(../assets/Imagens/img1.jpg);
-    background-size: cover;
+    overflow: hidden;
+}
+.fotoPerfilDef img{
+    position: relative;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .nomeUserDef{
@@ -185,6 +191,21 @@ visibility: hidden;
     margin-bottom: 10px;
 }
 
+.editarSubmit{
+    /* left:80%; */
+    transform: translate(6%);
+    width:100px !important;
+    height: 40px !important;
+    background-color: rgb(0, 171, 131) !important;
+    border: none !important;
+    border-radius: 0px !important;
+    color: white !important;
+}
+
+.editarSubmit:hover{
+    background-color: rgb(0, 135, 103) !important; 
+}
+
 .zonaEdicaoDir p{
     font-family: sans-serif !important;
     font-size: 11px;
@@ -222,3 +243,114 @@ visibility: hidden;
     font-size: 15px;
 }
 
+.msgInformativaAlteracoes{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:0px;
+    height: fit-content;
+    width:900px;
+    /* background-color: rgb(0, 171, 131); */
+    background-color: rgb(255, 38, 0);
+    padding: 10px;
+    padding-left: 30px;
+    visibility: hidden;
+}
+
+.msgInformativaAlteracoes h4{
+    color: white !important;
+    font-weight: 200;
+}
+
+.backgroundPopUpAlterarFoto{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);;
+    z-index: 9;
+    visibility: hidden;
+}
+
+.popUpAlterarFoto{
+    position: fixed;
+    width: 420px;
+    height: fit-content;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    z-index: 10;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+.popUpAlterarFoto li{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-top: 0.1px solid rgba(155, 155, 155, 0.6);
+    text-align: center;
+}
+
+#carregarFoto{
+    display: none
+}
+
+#carregarFotoLabel{
+    position: absolute;
+    top:0px;
+    left:0px;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.popUpAlterarFoto li:hover{
+    cursor: pointer;
+}
+
+.popUpAlterarFoto li:first-child{
+    border-top: none;
+    height: 80px;
+    cursor: default;
+}
+
+.popUpAlterarFoto li:nth-child(2) h4{
+    color: rgb(0, 171, 131) !important;
+}
+
+.popUpAlterarFoto li:nth-child(3) h4{
+    color: rgb(255, 38, 0) !important;
+}
+
+.popUpAlterarFoto li:last-child h4{
+    font-weight: 200;
+}
+
+.popUpAlterarFoto li h3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    cursor: default;
+}
+
+.popUpAlterarFoto li h4{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menuPerfil{
+    top: 86px;
+}
