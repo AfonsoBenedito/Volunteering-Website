@@ -14,14 +14,43 @@
     height: 100%;
     left:0px;
     top:0px;
-    background-image: url('../assets/Imagens/img3.jpg');
-    background-size: cover;
+    overflow:hidden;
+}
+
+.zonaFotoInstituicao img{
+    position: relative;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .descricaoInst h1{
     font-size: 20px;
+    display: inline;
 }
 
 .descricaoInst h2{
     font-size: 15px;
+}
+
+.editarPerfilInst{
+    position: relative;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    /*background-color: blueviolet;*/
+    padding: 3px;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    z-index: 20;
+    margin-left: 5px;
+    visibility: hidden;
+}
+
+.editarPerfilInst:hover{
+    cursor: pointer;
 }

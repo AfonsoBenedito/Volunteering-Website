@@ -1,0 +1,529 @@
+*{
+    font-family: 'Oswald', sans-serif; /* font-weight: 200 ou 600;*/
+    margin: 0;
+    padding: 0;
+    color:rgb(0,14,20);
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    cursor: default;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 171, 131); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 135, 103); 
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+nav{
+    position: fixed;
+    width:90px;
+    height: 100vh;
+    min-height: 590px;
+    left:0px;
+    top:0px;
+    background-color: none;
+    border-right: 1px solid rgb(176, 176, 176, 0.8);
+    background-color: white;
+    z-index: 15;
+}
+
+nav li{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 90px;
+}
+
+nav li a{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+
+.terminarAdmin{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    left: 0px;
+}
+
+nav li img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+}
+
+nav li:first-child{
+    margin-bottom: 50px;
+    cursor: default !important;
+}
+
+
+nav li:first-child img{
+    width: 80px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+
+nav li:nth-child(5) img{
+    top: 28px;
+}
+
+nav li:nth-child(5){
+    margin-bottom: 50px;
+}
+
+nav li h4{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 7px;
+    font-size: 13px;
+    font-weight: 200;
+    width: 90%;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav li:last-child h4{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+nav li:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+main{
+    position: absolute;
+    width: calc(100% - 200px);
+    /* min-width: 1235px; */
+    left:145px;
+    top:0px;
+    height: 100%;
+    min-height: 590px;
+    /* height: fit-content; */
+    /* background-color: brown; */
+}
+
+.mostrarSQL{
+    position: relative;
+    display: block;
+    margin-top:50px;
+    width: 100%;
+    max-width: 1600px;
+    height:fit-content;
+    max-height: 70vh;
+    left:50%;
+    transform: translate(-50%);
+    /* background-color: red; */
+    overflow-x: auto;
+    margin-bottom: 50px
+}
+
+table{
+    /* border: 3px solid black; */
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+}
+
+/* tbody tr{
+    height: fit-content;
+    min-height: 30px;
+    background-color: black;
+} */
+
+tr:nth-child(2n){
+    background-color: rgba(255, 255, 255, 0.2);
+}
+tr:nth-child(2n+1){
+    background-color: white;
+}
+
+th, td {
+    padding: 0.25em 0.5em 0.25em 1em;
+    vertical-align: text-top;
+    text-align: left;
+    text-indent: -0.5em;
+}
+
+th{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    /* background-color: yellow; */
+}
+
+td{
+    /* background-color: blue; */
+    vertical-align: middle;
+}
+
+.femTd{
+    text-align: center;
+    color: rgb(255, 23, 62);
+    font-size: 17.5px;
+    font-weight: 900;
+}
+
+.maleTd{
+    text-align: center;
+    color: rgb(0, 171, 131);
+    font-size: 17.5px;
+    font-weight: 900;
+}
+
+.otherTd{
+    text-align: center;
+    font-size: 17.5px;
+    font-weight: 900;
+}
+
+.naoTd{
+    text-align: center;
+    color: rgb(120, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.simTd{
+    text-align: center;
+    color: rgb(0, 171, 83);
+    font-size: 17.5px;
+    font-weight: bold;
+}
+
+.interTd{
+    text-align: center;
+    color: rgb(0,14,20);
+    font-size: 17.5px;
+    font-weight: bold;
+}
+
+.posicaoFotoPerfil{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden;
+    text-align: center;
+    left:0px;
+    vertical-align: middle;
+}
+
+.posicaoFotoPerfil img{
+    position: relative;
+    left:73%;
+    transform: translateX(-50%);
+    top: 0px;
+    width: auto;
+    height: 100%;
+    /* background-size: cover; */
+}
+
+/* SEARCH BAR */
+
+.searchVol{
+    /* background-color: coral; */
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    max-width: 1600px;
+    height: fit-content;
+}
+
+.zonaPesquisa{
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: red; */
+}
+
+.zonaMostrarPesquisa{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: fit-content;
+    /* background-color: rgb(255, 0, 255); */
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.zonaMostrarPesquisa h4{
+    font-size: 18px;
+    display: inline;
+}
+
+.zonaMostrarPesquisa h1{
+    font-size: 25px;
+    display: inline;
+    margin-right: 6px;
+}
+
+.searchPart{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: 40px;
+    /* background-color: rgb(102, 102, 0); */
+}
+
+.searchBar{
+    position: relative;
+    display: inline-block;
+    width: 270px;
+    height: 38px;
+    border: none;
+    border-bottom:2px solid rgb(0, 171, 83);
+    background-color: rgba(255, 255, 255, 0);
+    padding-left: 10px;
+    vertical-align: top;
+    font-size: 15px;
+}
+
+.searchBarSubmit{
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 40px;
+    border: none;
+    background-color: rgb(0, 171, 83);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    vertical-align: top;
+}
+
+.lupaSearch{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.pesqAvancada{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: rgb(64, 76, 243); */
+}
+
+.pesqAvancada h5{
+    cursor: pointer;
+}
+
+.setaPesqAvancada{
+    font-size: 8px;
+    vertical-align: 3px;
+    cursor: pointer;
+}
+
+.pesqAvancadaPopUp{
+    position: relative;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: rgb(243, 64, 183); */
+    margin-top: 10px;
+}
+
+.pesqAvancadaPopUp h3{
+    font-size: 15px;
+}
+
+.pesqAvancadaPopUp label{
+    font-size: 12px;
+}
+
+.pesqGenero{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    /* background-color: rgb(150, 243, 64); */
+    text-align: left;
+}
+
+.pesqCartaC{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    /* background-color: rgb(64, 237, 243); */
+    text-align: center;
+}
+
+.pesqSubmit{
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    /* background-color: rgb(64, 76, 243); */
+    text-align: center;
+}
+
+.pesqSubmit input{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(0, 171, 83);
+    color: white !important;
+    font-size: 13px;
+}
+
+.pesqIdade{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    /* background-color: rgb(162, 64, 243); */
+    text-align: center;
+}
+/* ---------------- */
+
+@media all and (max-height: 590px){
+    nav{
+        position: absolute;
+    }
+
+    .mostrarSQL{
+        height: 60%;
+    }
+
+    .mostrarSQL{
+        position: absolute;
+        top:200px;
+        width: 100%;
+        max-width: 1600px;
+        height:fit-content;
+        max-height: 70vh;
+        left:50%;
+        transform: translate(-50%);
+        /* background-color: red; */
+        overflow-x: auto;
+        margin-bottom: 50px
+    }
+}
+
+@media all and (max-width: 1581px){
+    th, td {
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 1610px){
+    .posicaoFotoPerfil{
+        left:-5px;
+    }
+}
+
+
+@media all and (max-width: 800px){
+    nav{
+        width:100vw;
+        height: 90px;
+        min-height: 0px;
+        left:0px;
+        text-align: center;
+    }
+    
+    nav li{
+        display: inline-block;
+        width: 90px;
+        height: 100%;
+        /* background-color: yellow; */
+        vertical-align: top;
+    }
+    
+    .terminarAdmin{
+        width: 90px;
+        height: 100%;
+        left: auto;
+        float: right;
+        right: 0px;
+    }
+
+    nav li:first-child{
+        position: absolute;
+        left:0px;
+        top:0px;
+    }
+
+    nav li:first-child{
+        top:0px;
+        margin-bottom: 50px;
+    }
+
+    main{
+        top:90px;
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+.zonaMostrarPesquisaInst {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: fit-content;
+    vertical-align: top;
+    margin-left: 20px;
+    left: 325px;
+    top: -39px;
+}
+
+.zonaMostrarPesquisaInst h4 {
+    font-size: 18px;
+    display: inline;
+}
+
+.zonaMostrarPesquisaInst h1 {
+    font-size: 25px;
+    display: inline;
+    margin-right: 6px;
+    left: 90px;
+    position: relative;
+    top: -40px;
+}
