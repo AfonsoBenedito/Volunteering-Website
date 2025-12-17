@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Acesso Autenticado"
-AuthUserFile /home/asw024/public_html/Projeto/asw-grupo24/admin/.htpasswd
-Require valid-user

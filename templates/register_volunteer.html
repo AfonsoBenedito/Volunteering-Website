@@ -1,0 +1,120 @@
+{{define "title"}}Inscrever Voluntário - VC19{{end}}
+
+{{define "extra_css"}}
+<link rel="stylesheet" href="/styles/inscrever.css">
+<style>
+    @media all and (max-width: 850px){ .zonaInscricao{ height: 1200px !important; } }
+    .fieldError { color: red; font-size: 0.85rem; margin-top: 4px; display: block; }
+</style>
+{{end}}
+
+{{define "content"}}
+
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img id="logotipoImg" src="/assets/Icons/logoPreto.png"></a>
+        </div>
+        <nav id="naviBar">
+            <a href="/volunteers"><button class="navBar">Voluntários</button></a>
+            <a href="/institutions"><button class="navBar">Instituições</button></a>
+            <button class="navBar">Eventos</button>
+            <button class="btnEntrar">Entrar</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="zonaInscricao">
+            <div class="zonaImgRegistar" style="background-image:url(/assets/Imagens/zonaRegisto.jpg);">
+                <h3>Inscrever-me como</h3>
+                <h1>Voluntário</h1>
+            </div>
+
+            {{if .Error}}
+            <div style="color:red;padding:1rem">{{.Error}}</div>
+            {{end}}
+
+            <div class="formRegist">
+                <form action="/register/volunteer" method="post">
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Username</h3></div>
+                        <div class="formDir">
+                            <input type="text" name="RegistoUsername" placeholder="Username"
+                                value="{{if .FormData}}{{.FormData.Username}}{{end}}" required>
+                            {{if .Errors}}{{if .Errors.Username}}<span class="fieldError">{{.Errors.Username}}</span>{{end}}{{end}}
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Nome</h3></div>
+                        <div class="formDir">
+                            <input type="text" name="RegistoNome" placeholder="Nome"
+                                value="{{if .FormData}}{{.FormData.Nome}}{{end}}" required>
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Apelido</h3></div>
+                        <div class="formDir">
+                            <input type="text" name="RegistoApelido" placeholder="Apelido"
+                                value="{{if .FormData}}{{.FormData.Apelido}}{{end}}" required>
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Data de Nascimento</h3></div>
+                        <div class="formDir">
+                            <input type="date" name="RegistoNascimento" max="2025-12-31"
+                                value="{{if .FormData}}{{.FormData.Nascimento}}{{end}}" required>
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>CC / Cartão Cidadão</h3></div>
+                        <div class="formDir">
+                            <input type="text" name="RegistoCC" placeholder="CC / Cartão Cidadão"
+                                value="{{if .FormData}}{{.FormData.CC}}{{end}}" required>
+                            {{if .Errors}}{{if .Errors.CC}}<span class="fieldError">{{.Errors.CC}}</span>{{end}}{{end}}
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Email</h3></div>
+                        <div class="formDir">
+                            <input type="email" name="RegistoEmail" placeholder="Email"
+                                value="{{if .FormData}}{{.FormData.Email}}{{end}}" required>
+                            {{if .Errors}}{{if .Errors.Email}}<span class="fieldError">{{.Errors.Email}}</span>{{end}}{{end}}
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Palavra-passe</h3></div>
+                        <div class="formDir">
+                            <input type="password" name="RegistoPass" placeholder="Palavra-passe" required>
+                        </div>
+                    </li>
+
+                    <li class="inscLi">
+                        <div class="formEsq"><h3>Confirmar Palavra-passe</h3></div>
+                        <div class="formDir">
+                            <input type="password" name="RegistoConfPass" placeholder="Confirmar Palavra-passe" required>
+                            {{if .Errors}}{{if .Errors.Password}}<span class="fieldError">{{.Errors.Password}}</span>{{end}}{{end}}
+                        </div>
+                    </li>
+
+                    <li>
+                        <input class="btnFinalInscrever" type="submit" value="Inscrever-me">
+                    </li>
+                </form>
+            </div>
+
+            <a href="/register/institution"><h4>
+                Inscrever Instituição
+                <svg xmlns="http://www.w3.org/2000/svg" class="setaNextPage" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+            </h4></a>
+        </div>
+    </main>
+
+{{end}}

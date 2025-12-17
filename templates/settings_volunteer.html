@@ -1,0 +1,283 @@
+{{define "title"}}Definições - VC19{{end}}
+
+{{define "extra_css"}}
+<link rel="stylesheet" href="/styles/definicoes.css">
+{{end}}
+
+{{define "content"}}
+
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img id="logotipoImg" src="/assets/Icons/logoPreto.png"></a>
+        </div>
+        <nav id="naviBar">
+            <a href="/volunteers"><button class="navBar">Voluntários</button></a>
+            <a href="/institutions"><button class="navBar">Instituições</button></a>
+            <button class="navBar">Eventos</button>
+        </nav>
+    </header>
+
+    <!-- Photo upload modal -->
+    <div class="backgroundPopUpAlterarFoto"></div>
+    <div class="popUpAlterarFoto">
+        <li><h3>Alterar Foto Perfil</h3></li>
+        <li>
+            <form action="/settings/photo" method="post" enctype="multipart/form-data" id="formAlterarFoto">
+                <label for="carregarFoto" id="carregarFotoLabel"><h4>Carregar foto</h4></label>
+                <input type="file" name="carregarFoto" id="carregarFoto" accept=".jpg,.jpeg,.png">
+            </form>
+        </li>
+        <li class="cancelarAlterarFoto"><h4>Cancelar</h4></li>
+    </div>
+
+    <main>
+        {{if .Success}}
+        <div class="msgInformativaAlteracoes" style="display:block;visibility:visible">
+            <h4 class="alteracoesInfo" style="color:green">{{.Success}}</h4>
+        </div>
+        {{else if .Error}}
+        <div class="msgInformativaAlteracoes" style="display:block;visibility:visible">
+            <h4 class="alteracoesInfo" style="color:red">{{.Error}}</h4>
+        </div>
+        {{else}}
+        <div class="msgInformativaAlteracoes"><h4 class="alteracoesInfo"></h4></div>
+        {{end}}
+
+        <div class="conteudoPrincipal">
+            <div class="btnPrincipaisEditar">
+                <li id="editarPerfilVoluntario" class="btnUsed"><h3>Editar Perfil</h3></li>
+                <li id="editarDadosVoluntario"><h3>Dados utilizador</h3></li>
+                <li id="editarPassVoluntario"><h3>Alterar palavra-passe</h3></li>
+                <li id="editarEmailVoluntario"><h3>Alterar email</h3></li>
+            </div>
+
+            <!-- PROFILE SECTION -->
+            <div class="zonaEdicaoPerfil">
+                <form action="/settings/profile" method="post">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef">
+                                <img class="editarFotoH" src="{{.Volunteer.ImagePath}}">
+                            </div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">{{.Volunteer.Nome}} {{.Volunteer.Apelido}}</h1>
+                            <h4 class="btnAlterarFoto">Alterar foto de perfil</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Username</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarUsername"
+                                placeholder="Alterar Username" value="{{.Volunteer.Username}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Nome</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarNome"
+                                placeholder="Alterar Nome" value="{{.Volunteer.Nome}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Apelido</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarApelido"
+                                placeholder="Alterar Apelido" value="{{.Volunteer.Apelido}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Biografia</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <textarea name="alterarBiografia" class="placeChange" placeholder="Biografia...">{{.Volunteer.Biografia}}</textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Data de nascimento</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="date" class="placeChange" name="alterarNascimento"
+                                value="{{formatDate .Volunteer.Nascimento}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Género</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <select class="placeChange" name="alterarGenero">
+                                <option value="">Escolha uma Opção</option>
+                                <option value="M" {{if eq .Volunteer.Genero "M"}}selected{{end}}>Masculino</option>
+                                <option value="F" {{if eq .Volunteer.Genero "F"}}selected{{end}}>Feminino</option>
+                                <option value="O" {{if eq .Volunteer.Genero "O"}}selected{{end}}>Outro</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Áreas de interesse</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarIntresses"
+                                placeholder="Interesses" value="{{.Volunteer.Interesses}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>População alvo</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarPopAlvo"
+                                placeholder="População alvo" value="{{.Volunteer.PopAlvo}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Disponibilidade</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarDisponibilidade"
+                                placeholder="Disponibilidade" value="{{.Volunteer.Disponibilidade}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"></div>
+                        <div class="zonaEdicaoDir"><input class="editarSubmit" type="submit" value="Guardar"></div>
+                    </li>
+                </form>
+            </div>
+
+            <!-- DATA SECTION -->
+            <div class="zonaEdicaoDados">
+                <form action="/settings/data" method="post">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="{{.Volunteer.ImagePath}}"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">{{.Volunteer.Nome}} {{.Volunteer.Apelido}}</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Distrito</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarDistrito"
+                                placeholder="Distrito" value="{{.Volunteer.Distrito}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Concelho</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarConcelho"
+                                placeholder="Concelho" value="{{.Volunteer.Concelho}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Freguesia</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarFreguesia"
+                                placeholder="Freguesia" value="{{.Volunteer.Freguesia}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Telemóvel</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarTelemovel"
+                                placeholder="Telemóvel" value="{{.Volunteer.Telemovel}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>CC / Cartão Cidadão</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="text" class="placeChange" name="alterarCC"
+                                placeholder="Cartão Cidadão" value="{{.Volunteer.CC}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Carta de condução</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <select class="placeChange" name="alterarConducao">
+                                <option value="">Indiferente</option>
+                                <option value="1" {{if .Volunteer.Conducao}}selected{{end}}>Sim</option>
+                                <option value="0" {{if not .Volunteer.Conducao}}selected{{end}}>Não</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"></div>
+                        <div class="zonaEdicaoDir"><input class="editarSubmit" type="submit" value="Guardar"></div>
+                    </li>
+                </form>
+            </div>
+
+            <!-- PASSWORD SECTION -->
+            <div class="zonaEdicaoPass">
+                <form action="/settings/password" method="post">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="{{.Volunteer.ImagePath}}"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">{{.Volunteer.Nome}} {{.Volunteer.Apelido}}</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Palavra-passe atual</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" name="alterarPassAtual" placeholder="Palavra-passe atual">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Nova palavra-passe</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" name="alterarPassNova" placeholder="Nova palavra-passe">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Confirmar nova palavra-passe</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" name="alterarPassNovaConf" placeholder="Confirmar nova palavra-passe">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"></div>
+                        <div class="zonaEdicaoDir"><input class="editarSubmit" type="submit" value="Alterar"></div>
+                    </li>
+                </form>
+            </div>
+
+            <!-- EMAIL SECTION -->
+            <div class="zonaEdicaoEmail">
+                <form action="/settings/email" method="post">
+                    <li>
+                        <div class="zonaEdicaoEsq">
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="{{.Volunteer.ImagePath}}"></div>
+                        </div>
+                        <div class="zonaEdicaoDir">
+                            <h1 class="nomeUserDef">{{.Volunteer.Nome}} {{.Volunteer.Apelido}}</h1>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Novo email</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="email" name="alterarEmail" placeholder="Novo email">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Confirmar novo email</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="email" name="alterarEmailConf" placeholder="Confirmar novo email">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"><h2>Palavra-passe</h2></div>
+                        <div class="zonaEdicaoDir">
+                            <input type="password" name="alterarEmailPass" placeholder="Palavra-passe">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="zonaEdicaoEsq"></div>
+                        <div class="zonaEdicaoDir"><input class="editarSubmit" type="submit" value="Alterar"></div>
+                    </li>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+{{end}}
+
+{{define "extra_scripts"}}
+<script src="/scripts/editarVoluntario.js"></script>
+{{end}}

@@ -1,0 +1,215 @@
+{{/* Admin panel — uses its own full-page layout, not the common site base */}}
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin VC19</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <link rel="shortcut icon" href="/assets/Icons/logoBranco.png">
+</head>
+<body>
+
+    <nav>
+        <li>
+            <img src="/assets/Icons/logoAdmin.png" alt="Admin">
+        </li>
+        <li>
+            <a href="/admin?obj=Vol">
+                <img src="/assets/Icons/voluntarios.png" alt="Voluntários">
+                <h4>Voluntários</h4>
+            </a>
+        </li>
+        <li>
+            <a href="/admin?obj=Inst">
+                <img src="/assets/Icons/instituicoes.png" alt="Instituições">
+                <h4>Instituições</h4>
+            </a>
+        </li>
+        <li>
+            <a href="/" target="_blank">
+                <img src="/assets/Icons/logoPreto.png" alt="Site">
+                <h4>Visitar Site</h4>
+            </a>
+        </li>
+    </nav>
+
+    <main>
+        {{if eq .SearchType "Vol"}}
+        <div class="searchVol">
+            <div class="zonaPesquisa">
+                <form method="post" action="/admin?obj=Vol">
+                    <div class="searchPart">
+                        <input type="text" class="searchBar" name="adminSearch"
+                            placeholder="Pesquise" value="{{.SearchQuery}}">
+                        <button type="submit" class="searchBarSubmit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lupaSearch" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="pesqAvancada">
+                        <h5 id="abrePesquisa"><span class="setaPesqAvancada">&#9654;</span> Pesquisa avançada</h5>
+                    </div>
+
+                    <div class="pesqAvancadaPopUp">
+                        <div class="pesqGenero">
+                            <h3>Género</h3>
+                            <input type="checkbox" name="adminCheckMasc" value="M" {{if .GenderM}}checked{{end}}>
+                            <label> Masculino </label><br>
+                            <input type="checkbox" name="adminCheckFem" value="F" {{if .GenderF}}checked{{end}}>
+                            <label> Feminino </label><br>
+                            <input type="checkbox" name="adminCheckOutro" value="O" {{if .GenderO}}checked{{end}}>
+                            <label> Outro </label>
+                        </div>
+
+                        <div class="pesqCartaC">
+                            <h3>Carta Condução</h3>
+                            <input type="checkbox" name="adminCartaConducao" id="adminCartaConducao"
+                                value="T" {{if eq .LicenseVal "T"}}checked{{end}}>
+                            <label for="adminCartaConducao" id="labelCartaC"> Com carta </label>
+                        </div>
+
+                        <div class="pesqIdade">
+                            <h3>Idade</h3>
+                            <select name="adminIdade">
+                                <option value="ind" {{if eq .AgeRange "ind"}}selected{{end}}>Indiferente</option>
+                                <option value="1-18" {{if eq .AgeRange "1-18"}}selected{{end}}>1 - 18</option>
+                                <option value="19-29" {{if eq .AgeRange "19-29"}}selected{{end}}>19 - 29</option>
+                                <option value="30-45" {{if eq .AgeRange "30-45"}}selected{{end}}>30 - 45</option>
+                                <option value="46-60" {{if eq .AgeRange "46-60"}}selected{{end}}>46 - 60</option>
+                                <option value="61+" {{if eq .AgeRange "61+"}}selected{{end}}>61+</option>
+                            </select>
+                        </div>
+
+                        <div class="pesqSubmit">
+                            <input type="submit" value="Filtrar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{if .SearchQuery}}
+            <div class="zonaMostrarPesquisa">
+                <h4>Pesquisa:</h4><h1>{{.SearchQuery}};</h1>
+                {{if .GenderM}}<h4>Género:</h4><h1>Masculino;</h1>{{end}}
+                {{if .GenderF}}<h4>Género:</h4><h1>Feminino;</h1>{{end}}
+                {{if .GenderO}}<h4>Género:</h4><h1>Outro;</h1>{{end}}
+                {{if eq .LicenseVal "T"}}<h4>Carta de Condução:</h4><h1>Sim;</h1>{{end}}
+                {{if and .AgeRange (ne .AgeRange "ind")}}<h4>Idade:</h4><h1>{{.AgeRange}};</h1>{{end}}
+            </div>
+            {{end}}
+        </div>
+
+        {{else}}
+        <div class="searchVol">
+            <div class="zonaPesquisa">
+                <form method="post" action="/admin?obj=Inst">
+                    <div class="searchPart">
+                        <input type="text" class="searchBar" name="adminSearchInst"
+                            placeholder="Pesquise" value="{{.SearchQuery}}">
+                        <button type="submit" class="searchBarSubmit">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lupaSearch" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                {{if .SearchQuery}}
+                <div class="zonaMostrarPesquisaInst">
+                    <h4>Pesquisa:</h4><h1>{{.SearchQuery}};</h1>
+                </div>
+                {{end}}
+            </div>
+        </div>
+        {{end}}
+
+        <div class="mostrarSQL">
+            <table>
+                <thead>
+                    {{if eq .SearchType "Vol"}}
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nome</th>
+                        <th>Cartão Cidadão</th>
+                        <th>Email</th>
+                        <th>Telemóvel</th>
+                        <th>Género</th>
+                        <th>Data Nascimento</th>
+                        <th>Carta Condução</th>
+                        <th>Localidade</th>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Nome Representante</th>
+                        <th>Email Representante</th>
+                        <th>Morada</th>
+                        <th>Localidade</th>
+                    </tr>
+                    {{end}}
+                </thead>
+                <tbody>
+                    {{if eq .SearchType "Vol"}}
+                    {{range .Volunteers}}
+                    <tr>
+                        <td>
+                            <a href="/volunteer/{{.Username}}" target="_blank">
+                                <div class="posicaoFotoPerfil"><img src="{{.ImagePath}}" alt="foto"></div>
+                            </a>
+                        </td>
+                        <td><a href="/volunteer/{{.Username}}" target="_blank">{{.Username}}</a></td>
+                        <td>{{.Nome}} {{.Apelido}}</td>
+                        <td>{{.CC}}</td>
+                        <td>{{.Email}}</td>
+                        <td>{{.Telemovel}}</td>
+                        <td {{if eq .Genero "M"}}class="maleTd"{{else if eq .Genero "F"}}class="femTd"{{else}}class="otherTd"{{end}}>
+                            {{genderStr .Genero}}
+                        </td>
+                        <td>{{formatDate .Nascimento}}</td>
+                        <td {{if .Conducao}}class="simTd"{{else}}class="naoTd"{{end}}>
+                            {{conducaoStr .Conducao}}
+                        </td>
+                        <td>{{locationStr .Distrito .Concelho .Freguesia}}</td>
+                    </tr>
+                    {{else}}
+                    <tr><td colspan="10" style="text-align:center">Sem resultados.</td></tr>
+                    {{end}}
+                    {{else}}
+                    {{range .Institutions}}
+                    <tr>
+                        <td>
+                            <a href="/institution/{{.ID}}" target="_blank">
+                                <div class="posicaoFotoPerfil"><img src="{{.ImagePath}}" alt="foto"></div>
+                            </a>
+                        </td>
+                        <td><a href="/institution/{{.ID}}" target="_blank">{{.Nome}}</a></td>
+                        <td>{{.Email}}</td>
+                        <td>{{.Telefone}}</td>
+                        <td>{{.NomeRepresentante}}</td>
+                        <td>{{.EmailRepresentante}}</td>
+                        <td>{{.Morada}}</td>
+                        <td>{{locationStr .Distrito .Concelho .Freguesia}}</td>
+                    </tr>
+                    {{else}}
+                    <tr><td colspan="8" style="text-align:center">Sem resultados.</td></tr>
+                    {{end}}
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="/scripts/adminSearch.js"></script>
+
+</body>
+</html>
+{{end}}

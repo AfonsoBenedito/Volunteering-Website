@@ -1,0 +1,70 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - for-cloud-run
+
+env:
+  # ── GCP settings ──────────────────────────────────────────────────────────
+  # Set these in your GitHub repo → Settings → Secrets and variables → Actions
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: europe-southwest1           # change to your preferred region
+  SERVICE_NAME: vc19             # Cloud Run service name
+  ARTIFACT_REPO: vc19            # Artifact Registry repository name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write            # required for Workload Identity Federation
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Authenticate to GCP via Workload Identity Federation (no long-lived keys)
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      # Configure Docker to push to Artifact Registry
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+
+      - name: Build and push Docker image
+        run: |
+          IMAGE="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPO }}/${{ env.SERVICE_NAME }}:${{ github.sha }}"
+          docker build -t "$IMAGE" .
+          docker push "$IMAGE"
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy ${{ env.SERVICE_NAME }} \
+            --image "$IMAGE" \
+            --region ${{ env.REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory 256Mi \
+            --cpu 1 \
+            --min-instances 0 \
+            --max-instances 3 \
+            --concurrency 80 \
+            --timeout 30s \
+            --set-env-vars "SESSION_KEY=${{ secrets.SESSION_KEY }}" \
+            --set-env-vars "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" \
+            --set-env-vars "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" \
+            --set-env-vars "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}"
+
+      - name: Show service URL
+        run: |
+          gcloud run services describe ${{ env.SERVICE_NAME }} \
+            --region ${{ env.REGION }} \
+            --format 'value(status.url)'

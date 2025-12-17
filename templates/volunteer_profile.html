@@ -1,0 +1,76 @@
+{{define "title"}}@{{.Volunteer.Username}} - VC19{{end}}
+
+{{define "extra_css"}}
+<link rel="stylesheet" href="/styles/perfil.css">
+{{end}}
+
+{{define "content"}}
+
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img id="logotipoImg" src="/assets/Icons/logoPreto.png"></a>
+        </div>
+        <nav id="naviBar">
+            <a href="/volunteers"><button class="navBar">Voluntários</button></a>
+            <a href="/institutions"><button class="navBar">Instituições</button></a>
+            <button class="navBar">Eventos</button>
+            {{if .Session.LoggedIn}}
+            <button class="perfilButton">
+                <div class="navImagemPerfil"><img src="{{.Session.ImagePath}}"></div>
+                <div class="apontadorPerfil"></div>
+            </button>
+            {{else}}
+            <button class="btnEntrar">Entrar</button>
+            {{end}}
+        </nav>
+    </header>
+
+    <main>
+        {{if .Incomplete}}
+        <div id="adicional" style="display:block">
+            <div class="perfilIncompleto">
+                <h3>Informações por preencher em Definições: {{range $i, $v := .Incomplete}}{{if $i}}, {{end}}{{$v}}{{end}}</h3>
+            </div>
+        </div>
+        {{else}}
+        <div id="adicional"></div>
+        {{end}}
+
+        <div class="zonaPerfil">
+            <li class="zonasPerfil">
+                <div class="zonaFotoPerfil">
+                    <div class="fotoPerfil">
+                        <img id="fotoPerfilImg" src="{{.Volunteer.ImagePath}}">
+                    </div>
+                </div>
+                <div class="zonaDescricaoPerfil">
+                    <ul>
+                        <p class="nomePerfil">{{.Volunteer.Nome}} {{.Volunteer.Apelido}}</p>
+                        {{if .IsOwnProfile}}
+                        <a href="/settings" class="editarPerfil" style="visibility:visible">Editar perfil</a>
+                        {{end}}
+                    </ul>
+                    <ul id="idade">Voluntário - {{age .Volunteer.Nascimento}}</ul>
+                    {{if .Volunteer.Interesses}}
+                    <ul id="interesses">Interesses: {{.Volunteer.Interesses}}</ul>
+                    {{end}}
+                    {{if .Volunteer.Biografia}}
+                    <ul id="biografia">Biografia: {{.Volunteer.Biografia}}</ul>
+                    {{end}}
+                </div>
+            </li>
+        </div>
+
+        <div class="mostraEventosParticipou">
+            <li>
+                <div class="fotoEventoPerfil"></div>
+                <div class="defEventoPerfil">
+                    <h1>Evento Muito Bonito</h1>
+                    <h3>Portugal</h3>
+                </div>
+                <div class="ativoDesativoPerfil"><h3>Expirado</h3></div>
+            </li>
+        </div>
+    </main>
+
+{{end}}

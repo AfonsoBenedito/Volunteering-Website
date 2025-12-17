@@ -1,0 +1,18 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      SESSION_KEY: "dev-session-key-change-in-production-32b"
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "admin"
+      # Unset → LocalStorage (uploads saved to ./uploads/)
+      # Set to a GCS bucket name for cloud storage
+    volumes:
+      - uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  uploads:

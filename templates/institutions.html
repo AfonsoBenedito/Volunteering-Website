@@ -1,0 +1,55 @@
+{{define "title"}}Instituições - VC19{{end}}
+
+{{define "extra_css"}}
+<link rel="stylesheet" href="/styles/vol_inst.css">
+{{end}}
+
+{{define "content"}}
+
+    <header id="header">
+        <div class="logo">
+            <a href="/"><img id="logotipoImg" src="/assets/Icons/logoPreto.png"></a>
+        </div>
+        <nav id="naviBar">
+            <a href="/volunteers"><button class="navBar">Voluntários</button></a>
+            <a href="/institutions"><button class="navBar">Instituições</button></a>
+            <button class="navBar">Eventos</button>
+            {{if .Session.LoggedIn}}
+            <button class="perfilButton">
+                <div class="navImagemPerfil"><img src="{{.Session.ImagePath}}"></div>
+                <div class="apontadorPerfil"></div>
+            </button>
+            {{else}}
+            <button class="btnEntrar">Entrar</button>
+            {{end}}
+        </nav>
+    </header>
+
+    <div class="apresentacaoVolInst">
+        {{range .Institutions}}
+        <a href="/institution/{{.ID}}">
+            <div class="topUtilizadorCarta">
+                <div class="zonaFotoCartaUti">
+                    <div class="centerVerticalFotoInst">
+                        <img src="{{.ImagePath}}">
+                    </div>
+                </div>
+                <div class="zonaNomesCartaUti">
+                    <div class="centerVerticalNomes">
+                        <h2>{{.Nome}}</h2>
+                        <h3>{{.Tipo}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomUtilizadorCarta">
+                <h3>{{.Distrito}}</h3>
+                <h3>{{.Telefone}}</h3>
+            </div>
+            <button>Visitar Perfil</button>
+        </a>
+        {{else}}
+        <p style="padding:2rem">Nenhuma instituição encontrada.</p>
+        {{end}}
+    </div>
+
+{{end}}

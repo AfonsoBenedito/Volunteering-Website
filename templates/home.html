@@ -1,0 +1,120 @@
+{{define "title"}}VoluntárioCOVID19 - Home{{end}}
+
+{{define "extra_css"}}
+<link rel="stylesheet" href="/styles/home.css">
+{{end}}
+
+{{define "content"}}
+
+    <!-- HERO BACKGROUND -->
+    <div class="background">
+        <div class="principalText">
+            <h1 class="eEs">
+                <span class="eE">Q</span><span class="eE">u</span><span class="eE">e</span><span class="eE">r</span><span>&nbsp;</span>
+                <span class="eE">F</span><span class="eE">a</span><span class="eE">z</span><span class="eE">e</span><span class="eE">r</span><span>&nbsp;</span><span class="eE">a</span><span>&nbsp;</span>
+                <span class="eE">D</span><span class="eE">i</span><span class="eE">f</span><span class="eE">e</span><span class="eE">r</span><span class="eE">e</span><span class="eE">n</span><span class="eE">ç</span><span class="eE">a</span><span class="eE">?</span>
+                <br>
+                <span class="eE">V</span><span class="eE">o</span><span class="eE">l</span><span class="eE">u</span><span class="eE">n</span><span class="eE">t</span><span class="eE">á</span><span class="eE">r</span><span class="eE">i</span><span class="eE">o</span>
+                <span class="eE">C</span><span class="eE">O</span><span class="eE">V</span><span class="eE">I</span><span class="eE">D</span><span class="eE">1</span><span class="eE">9</span>
+            </h1>
+            <h3>Começa já a melhorar vidas.</h3>
+            <br><br>
+            {{if .Session.LoggedIn}}
+            <a href="/" class="btnPrincipal">Ações Voluntariado</a>
+            {{else}}
+            <a href="/register/volunteer" class="btnPrincipal">Tornar-me Voluntário</a>
+            {{end}}
+        </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <header id="header">
+        <div class="logo">
+            <img id="logotipoImg" src="/assets/Icons/logoBranco.png">
+        </div>
+        <nav id="naviBar">
+            <a href="/volunteers"><button class="navBar">Voluntários</button></a>
+            <a href="/institutions"><button class="navBar">Instituições</button></a>
+            <button class="navBar">Eventos</button>
+            {{if .Session.LoggedIn}}
+            <button class="perfilButton">
+                <div class="navImagemPerfil"><img src="{{.Session.ImagePath}}"></div>
+                <div class="apontadorPerfil"></div>
+            </button>
+            {{else}}
+            <button class="btnEntrar">Entrar</button>
+            {{end}}
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="resumoApp">
+            <h1>O que é a VoluntárioCOVID19?</h1>
+            <p>A VoluntárioCOVID19 tem como objetivo fazer a gestão de uma bolsa de voluntários que permita às
+                instituições registadas encontrar e recrutar voluntários. Inscreva-se se pretender participar em ações de voluntariado
+                e de solidariedade COVID19.
+            </p>
+            <br>
+            <p><a href="#">Sabe mais aqui!</a></p>
+        </div>
+
+        <div class="principalBlocks">
+            <li>
+                <div class="imgCartao um"></div>
+                {{if .Session.LoggedIn}}
+                <a href="/volunteers" class="btnCartao">Ver Voluntários</a>
+                <div class="zonaTextoCartao">
+                    <div class="centerTextCartao">
+                        <h1 id="imgCartaoVolH">Quer conhecer outros Voluntários?</h1>
+                        <p>Comece já a ajudar!</p>
+                    </div>
+                </div>
+                {{else}}
+                <a href="/register/volunteer" class="btnCartao">Ser Voluntário</a>
+                <div class="zonaTextoCartao">
+                    <div class="centerTextCartao">
+                        <h1 id="imgCartaoVolH">Quer tornar-se voluntário?</h1>
+                        <p>Comece já a ajudar!</p>
+                    </div>
+                </div>
+                {{end}}
+            </li>
+            <li>
+                <div class="imgCartao dois"></div>
+                {{if .Session.LoggedIn}}
+                <a href="/institutions" class="btnCartao">Ver Instituições</a>
+                <div class="zonaTextoCartao">
+                    <div class="centerTextCartao">
+                        <h1 id="imgCartaoInstH">Quer conhecer as Instituições que participam?</h1>
+                        <p>Não perca tempo!</p>
+                    </div>
+                </div>
+                {{else}}
+                <a href="/register/institution" class="btnCartao">Inscrever Instituição</a>
+                <div class="zonaTextoCartao">
+                    <div class="centerTextCartao">
+                        <h1 id="imgCartaoInstH">Instituição organizadora de ações de voluntariado?</h1>
+                        <p>Não perca tempo!</p>
+                    </div>
+                </div>
+                {{end}}
+            </li>
+            <li>
+                <div class="imgCartao tres"></div>
+                <a class="btnCartao">Criar Iniciativa</a>
+                <div class="zonaTextoCartao">
+                    <div class="centerTextCartao">
+                        <h1>Planear uma iniciativa local de voluntariado?</h1>
+                        <p>Do que está à espera?</p>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </main>
+
+{{end}}
+
+{{define "extra_scripts"}}
+<script src="/scripts/home.js"></script>
+{{end}}
