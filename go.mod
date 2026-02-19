@@ -1,4 +1,4 @@
-module github.com/asw-grupo24/vc19
+module github.com/AfonsoBenedito/Volunteering-Website
 
 go 1.24.0
 
