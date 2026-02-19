@@ -1,2 +1,34 @@
-.desktop.ini
+# ── macOS ──────────────────────────────────────────────────────────────────────
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Windows ────────────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+.desktop.ini
+
+# ── IDEs ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── PHP / runtime ──────────────────────────────────────────────────────────────
+*.log
+
+# ── Credentials / secrets ──────────────────────────────────────────────────────
+admin/.htpasswd
+.env
+
+# ── Uploads (user-generated content) ──────────────────────────────────────────
+assets/FotosInstituicao/*
+assets/FotosVoluntario/*
+!assets/FotosInstituicao/.gitkeep
+!assets/FotosVoluntario/.gitkeep
+
+# ── Local dev archives ─────────────────────────────────────────────────────────
+*.zip
