@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'connection.php';
+include '../includes/connection.php';
 
 $Email = htmlspecialchars($_POST['alterarEmail']);
 $EmailConf = htmlspecialchars($_POST['alterarEmailConf']);
@@ -69,7 +69,7 @@ $_SESSION['alteracoesErradas'] = $arrayErrado;
 // echo $arrayCerto[0];
 // echo $arrayErrado[0];
 
-header('Location: editarPerfil.php');
+header('Location: ../editarPerfil.php');
 exit;
 
 ?>

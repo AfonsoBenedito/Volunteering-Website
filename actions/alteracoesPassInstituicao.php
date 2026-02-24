@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'connection.php';
+include '../includes/connection.php';
 
 $PassAtual = htmlspecialchars($_POST['alterarPassAtual']);
 $PassNova = htmlspecialchars($_POST['alterarPassNova']);
@@ -18,7 +18,7 @@ if ($PassNova != $PassNovaConf){
     array_push($arrayErrado, 'Palavras Passes não coincidentes!');
 } else {
 
-    $comandoVerificarPass = "SELECT Pass FROM voluntariosVC19 WHERE (Email = '$UserEmail')";
+    $comandoVerificarPass = "SELECT Pass FROM instituicoesVC19 WHERE (Email = '$UserEmail')";
 
     $verificarPass = mysqli_query($conn, $comandoVerificarPass);
 
@@ -33,7 +33,7 @@ if ($PassNova != $PassNovaConf){
 
         $hashedPw = password_hash($PassNova, PASSWORD_DEFAULT);
 
-        $comandoSql = "UPDATE voluntariosVC19 SET Pass = '$hashedPw' WHERE Email = '$UserEmail'";
+        $comandoSql = "UPDATE instituicoesVC19 SET Pass = '$hashedPw' WHERE Email = '$UserEmail'";
 
         $alteracao = mysqli_query($conn, $comandoSql);
 
@@ -51,5 +51,5 @@ $_SESSION['tipoAlteracoes'] = "Pass";
 $_SESSION['alteracoesCertas'] = $arrayCerto;
 $_SESSION['alteracoesErradas'] = $arrayErrado;
 
-header('Location: editarPerfil.php');
+header('Location: ../editarPerfilInstituicao.php');
 exit;

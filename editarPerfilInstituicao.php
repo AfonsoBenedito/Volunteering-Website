@@ -30,6 +30,8 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
 
         <title>Editar Instituição</title>
 
+        <link rel="shortcut icon" href="assets/icons/logoBranco.png">
+
     </head>
     
     <body>
@@ -37,7 +39,7 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
         <header id="header">
 
             <div class="logo">
-                <a href="./"><img id="logotipoImg" src="./assets/Icons/logoPreto.png"></a>
+                <a href="./"><img id="logotipoImg" src="./assets/icons/logoPreto.png"></a>
                 
             </div>
 
@@ -83,7 +85,7 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
         <div class="popUpAlterarFoto">
             <li><h3>Alterar Foto Perfil</h3></li>
             <li>
-                <form action="alterarFotoInstituicao.php" method="post" id="formAlterarFoto" enctype="multipart/form-data">
+                <form action="actions/alterarFotoInstituicao.php" method="post" id="formAlterarFoto" enctype="multipart/form-data">
                     <label for="carregarFoto" id="carregarFotoLabel"><h4>Carregar foto</h4></label>
                     <input type="file" name="carregarFoto" id="carregarFoto" accept=".jpg,.jpeg,.png" >
                 </form>
@@ -115,10 +117,10 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
                 <!-- ZONA EDIÇÃO PERFIL -->
                 <div class="zonaEdicaoPerfil">
 
-                    <form action="alteracoesPerfilInstituicao.php" method="post"> <!-- Perceber -->
+                    <form action="actions/alteracoesPerfilInstituicao.php" method="post"> <!-- Perceber -->
                         <li>
                             <div class="zonaEdicaoEsq">
-                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/Imagens/perfilDefault.png"></div>
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/images/perfilDefault.png"></div>
                             </div>
                             <div class="zonaEdicaoDir">
                                 <h1 class="nomeUserDef">Tomás Ndlate</h1>
@@ -177,10 +179,10 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
 
                 <!-- ZONA EDIÇÃO DADOS -->
                 <div class="zonaEdicaoDados">
-                    <form action="alteracoesDadosInstituicao.php" method="post">
+                    <form action="actions/alteracoesDadosInstituicao.php" method="post">
                         <li>
                             <div class="zonaEdicaoEsq">
-                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/Imagens/perfilDefault.png"></div>
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/images/perfilDefault.png"></div>
                             </div>
                             <div class="zonaEdicaoDir">
                                 <h1 class="nomeUserDef">Tomás Ndlate</h1>
@@ -246,10 +248,10 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
 
                 <!-- ZONA EDIÇÃO PASSWORD -->
                 <div class="zonaEdicaoPass">
-                    <form action="alteracoesPassInstituicao.php" method="post">
+                    <form action="actions/alteracoesPassInstituicao.php" method="post">
                         <li>
                             <div class="zonaEdicaoEsq">
-                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/Imagens/perfilDefault.png"></div>
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/images/perfilDefault.png"></div>
                             </div>
                             <div class="zonaEdicaoDir">
                                 <h1 class="nomeUserDef">Tomás Ndlate</h1>
@@ -288,10 +290,10 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
 
                 <!-- ZONA EDIÇÃO EMAIL -->
                 <div class="zonaEdicaoEmail">
-                    <form action="alteracoesEmailInstituicao.php" method="post">
+                    <form action="actions/alteracoesEmailInstituicao.php" method="post">
                         <li>
                             <div class="zonaEdicaoEsq">
-                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/Imagens/perfilDefault.png"></div>
+                            <div class="fotoPerfilDef"><img class="editarFotoH" src="assets/images/perfilDefault.png"></div>
                             </div>
                             <div class="zonaEdicaoDir">
                                 <h1 class="nomeUserDef">Tomás Ndlate</h1>
@@ -353,7 +355,7 @@ if (!(isset($_SESSION['Logged'])) or $_SESSION['Tipo'] != 'Inst'){
 
 <?php
 
-include 'connection.php';
+include 'includes/connection.php';
 
 $UserEmail = $_SESSION['User'];
 
@@ -417,7 +419,7 @@ echo "document.getElementsByClassName('editarFotoH')[3].src = '$Imagem';";
 
 echo "</script>";
 
-include 'confirmarAlteracoes.php';
+include 'includes/confirmarAlteracoes.php';
 
 if (isset($_SESSION['Logged'])) {
 

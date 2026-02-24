@@ -5,7 +5,7 @@ session_start();
 $arrayCerto = array();
 $arrayErrado = array();
 
-include 'connection.php';
+include '../includes/connection.php';
 
 $UserEmail = $_SESSION['User'];
 
@@ -18,8 +18,9 @@ $nomeBase = basename($_FILES["carregarFoto"]["name"]);
 $extensao = strtolower(pathinfo($nomeBase,PATHINFO_EXTENSION));
 
 
-$target_dir = "assets/FotosInstituicao/";
+$target_dir = "../assets/FotosInstituicao/";
 $target_file = $target_dir . $Nome . "." . $extensao;
+$db_image_path = "assets/FotosInstituicao/" . $Nome . "." . $extensao;
 $uploadOk = 1;
 
 if(isset($_POST["submit"])) {
@@ -60,7 +61,7 @@ if ($uploadOk == 0) {
 
 if ($uploadOk == 1){
 
-    $comandoInsert  = "UPDATE instituicoesVC19 SET ImagePath = '$target_file' WHERE (Email = '$UserEmail');";
+    $comandoInsert  = "UPDATE instituicoesVC19 SET ImagePath = '$db_image_path' WHERE (Email = '$UserEmail');";
 
     $res = mysqli_query($conn, $comandoInsert);
 
@@ -85,7 +86,7 @@ $_SESSION['alteracoesCertas'] = $arrayCerto;
 $_SESSION['alteracoesErradas'] = $arrayErrado;
 $_SESSION['tipoAlteracoes'] = 'Foto';
 
-header("Location: editarPerfilInstituicao.php");
+header('Location: ../editarPerfilInstituicao.php');
 exit;
 
 ?>

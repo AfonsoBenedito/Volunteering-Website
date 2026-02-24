@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_POST['LoginEmail'])){
-        include 'Login.php';
+        include 'includes/login.php';
     }
     
 
@@ -30,7 +30,7 @@
         <!-- Home CSS -->
         <link rel="stylesheet" href="styles/home.css">
 
-        <link rel="shortcut icon" href="assets/Icons/logoBranco.png">
+        <link rel="shortcut icon" href="assets/icons/logoBranco.png">
 
         <title>VoluntárioCOVID19 - Home</title>
 
@@ -145,7 +145,7 @@
         <header id="header">
 
             <div class="logo">
-                <img id="logotipoImg" src="assets/Icons/logoBranco.png">
+                <img id="logotipoImg" src="assets/icons/logoBranco.png">
             </div>
 
             <nav id='naviBar'>
@@ -155,7 +155,7 @@
                 <button class="btnEntrar">Entrar</button> <!--tambem vai poder ser btn perfil-->
                 <!-- <button class="perfilButton">foto
                     <div class="navImagemPerfil">
-                        <img src="assets/Imagens/perfilDefault.png">
+                        <img src="assets/images/perfilDefault.png">
                     </div>
                     <div class="apontadorPerfil"></div>
                 </button> -->

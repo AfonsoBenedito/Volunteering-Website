@@ -9,11 +9,11 @@ if (isset($_SESSION['Logged'])){
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if (isset($_POST['LoginEmail'])){
 
-        include 'Login.php';
+        include 'includes/login.php';
 
         if (isset($_SESSION['Logged'])){
             header('Location: ./');
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $hashedPw = password_hash($RPass, PASSWORD_DEFAULT);
 
-            $comandoRegistoInput = "INSERT INTO instituicoesVC19 (Email, Pass, Nome, NomeRepresentante, EmailRepresentante, Verificado, ImagePath) VALUES ('$REmail', '$hashedPw', '$RNome', '$RNomeRepr', '$REmailRepr', 'FALSE', 'assets/Imagens/perfilDefault.png')"; 
+            $comandoRegistoInput = "INSERT INTO instituicoesVC19 (Email, Pass, Nome, NomeRepresentante, EmailRepresentante, Verificado, ImagePath) VALUES ('$REmail', '$hashedPw', '$RNome', '$RNomeRepr', '$REmailRepr', 'FALSE', 'assets/images/perfilDefault.png')"; 
 
             $resultadoRegistoInput = mysqli_query($conn, $comandoRegistoInput);
 
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <link rel="stylesheet" href="styles/geral.css">
         <link rel="stylesheet" href="styles/inscrever.css">
 
-        <link rel="shortcut icon" href="assets/Icons/logoBranco.png">
+        <link rel="shortcut icon" href="assets/icons/logoBranco.png">
 
         <title>Inscrever Instituição</title>
 
@@ -215,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <header id="header">
             <div class="logo">
                 <!--<h1 class="navBar">VoluntárioCOVID19</h1>-->
-                <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+                <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
                 
             </div>
 
@@ -229,7 +229,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <main>
         <div class="zonaInscricao">
-            <div class="zonaImgRegistar" style="background-image:url(assets/Imagens/zonaRegisto3.jpg);">
+            <div class="zonaImgRegistar" style="background-image:url(assets/images/zonaRegisto3.jpg);">
                 <h3>Inscrever</h3>
                 <h1>Instituição</h1>
             </div>

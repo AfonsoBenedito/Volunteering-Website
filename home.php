@@ -6,13 +6,13 @@ if (!(isset($_SESSION['Logged']))){
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        include "connection.php";
+        include 'includes/connection.php';
 
         $email = $_POST["LoginEmail"];
         $pass = $_POST["LoginPass"];
         
 
-        $comandoLogin = "SELECT Email, Pass, CC FROM voluntarios WHERE (Email = '$email')";
+        $comandoLogin = "SELECT Email, Pass, CC FROM voluntariosVC19 WHERE (Email = '$email')";
 
         $resultado = mysqli_query($conn, $comandoLogin);
 
@@ -67,6 +67,8 @@ if (!(isset($_SESSION['Logged']))){
         <link rel="stylesheet" href="styles/home.css">
 
         <title>Home</title>
+
+        <link rel="shortcut icon" href="assets/icons/logoBranco.png">
 
     </head>
 
@@ -153,7 +155,7 @@ if (!(isset($_SESSION['Logged']))){
         <header id="header">
 
             <div class="logo">
-                <img id="logotipoImg" src="assets/Icons/logoBranco.png">
+                <img id="logotipoImg" src="assets/icons/logoBranco.png">
             </div>
 
             <nav id='naviBar'>

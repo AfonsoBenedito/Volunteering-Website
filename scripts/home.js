@@ -14,7 +14,7 @@ function scrollFunction() {
         }
 
         document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255)";
-        document.getElementById("logotipoImg").src = "assets/Icons/logoPreto.png"
+        document.getElementById("logotipoImg").src = "assets/icons/logoPreto.png"
         document.getElementById("header").style.height = "100px";
 
         document.getElementsByClassName("menuPerfil")[0].style.top = '85px'
@@ -26,7 +26,7 @@ function scrollFunction() {
         }
 
         document.getElementById("header").style.backgroundColor = "rgba(255, 255, 255, 0)";
-        document.getElementById("logotipoImg").src = "assets/Icons/logoBranco.png"
+        document.getElementById("logotipoImg").src = "assets/icons/logoBranco.png"
         document.getElementById("header").style.height = "140px";
 
         document.getElementsByClassName("menuPerfil")[0].style.top = '104px'

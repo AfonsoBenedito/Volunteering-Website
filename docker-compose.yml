@@ -1,0 +1,41 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_USER: asw024
+      DB_PASS: asw024
+      DB_NAME: asw024
+    volumes:
+      - fotos_voluntario:/var/www/html/assets/FotosVoluntario
+      - fotos_instituicao:/var/www/html/assets/FotosInstituicao
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: asw024
+      MYSQL_USER: asw024
+      MYSQL_PASSWORD: asw024
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  fotos_voluntario:
+  fotos_instituicao:

@@ -1,10 +1,10 @@
 <?php
 
     session_start();
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if (isset($_POST['LoginEmail'])){
-        include 'Login.php';
+        include 'includes/login.php';
     }
     
 
@@ -29,7 +29,7 @@
 
     <title>Instituições</title>
 
-    <link rel="shortcut icon" href="assets/Icons/logoBranco.png">
+    <link rel="shortcut icon" href="assets/icons/logoBranco.png">
 
     <style>
         .lista{
@@ -82,7 +82,7 @@
 <body>
     <header id="header">
         <div class="logo">
-            <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+            <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
         </div>
 
         <nav id="naviBar">

@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'connection.php';
+include 'includes/connection.php';
 
 if ($_SESSION['Tipo'] == 'Vol'){
 

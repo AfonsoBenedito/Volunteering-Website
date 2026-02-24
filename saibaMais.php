@@ -1,10 +1,10 @@
 <?php
 
     session_start();
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if (isset($_POST['LoginEmail'])){
-        include 'Login.php';
+        include 'includes/login.php';
     }
     
 
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="styles/perfil.css">
     <link rel="stylesheet" href="styles/saibaMais.css">
 
-    <link rel="shortcut icon" href="./assets/Icons/logoBranco.png">
+    <link rel="shortcut icon" href="./assets/icons/logoBranco.png">
 
     <title>Saiba Mais</title>
 
@@ -37,7 +37,7 @@
 <body>
     <header id="header">
         <div class="logo">
-            <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+            <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
         </div>
 
         <nav id="naviBar">
@@ -148,11 +148,11 @@
             </div>
 
             <div class="image1">
-                <img src="./assets/Imagens/imgVoluntario.jpg">
+                <img src="./assets/images/register.jpg">
             </div>
 
             <div class="image2">
-                <img src="./assets/Imagens/imgInstituicao.jpg">
+                <img src="./assets/images/zonaRegisto.jpg">
             </div>
 
             <div class="separadorI">

@@ -123,15 +123,15 @@
 }
 
 .imgCartao.um{
-    background-image: url(../assets/Imagens/cartao1.jpg);
+    background-image: url(../assets/images/cartao1.jpg);
 }
 
 .imgCartao.dois{
-    background-image: url(../assets/Imagens/cartao2.jpg);
+    background-image: url(../assets/images/cartao2.jpg);
 }
 
 .imgCartao.tres{
-    background-image: url(../assets/Imagens/cartao3.jpg);
+    background-image: url(../assets/images/cartao3.jpg);
 }
 
 .btnCartao{

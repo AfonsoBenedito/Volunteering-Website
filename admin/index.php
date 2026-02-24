@@ -1,6 +1,6 @@
 <?php
 
-include '../connection.php';
+include '../includes/connection.php';
 
 $levouPost = FALSE;
 
@@ -194,40 +194,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../assets/Icons/logoBranco.png">
+    <link rel="shortcut icon" href="../assets/icons/logoBranco.png">
 
 </head>
 <body>
 
     <nav>
         <li>
-            <img src="../assets/Icons/logoAdmin.png">
+            <img src="../assets/icons/logoAdmin.png">
         </li>
 
         <li>
             <a href="./?obj=Vol">
-                <img src="../assets/Icons/voluntarios.png">
+                <img src="../assets/icons/voluntarios.png">
                 <h4>Voluntários</h4>
             </a>
         </li>
 
         <li>
             <a href="./?obj=Inst">
-                <img src="../assets/Icons/instituicoes.png">
+                <img src="../assets/icons/instituicoes.png">
                 <h4>Instituições</h4>
             </a>
         </li>
 
         <li>
             <a href="./?obj=Acoes">
-                <img src="../assets/Icons/acoes.png">
+                <img src="../assets/icons/acoes.png">
                 <h4>Iniciativas</h4>
             </a>
         </li>
 
         <li>
             <a href="../" target="_blank">
-                <img src="../assets/Icons/logoPreto.png">
+                <img src="../assets/icons/logoPreto.png">
                 <h4>Visitar Site</h4>
             </a>
         </li>

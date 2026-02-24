@@ -2,7 +2,7 @@
 
 session_start();
 
-include "connection.php";
+include '../includes/connection.php';
 
 $NomeInst = htmlspecialchars($_POST['alterarNomeInstituicao']);
 $DescricaoInst = htmlspecialchars($_POST['alterarDescricao']);
@@ -73,7 +73,7 @@ $_SESSION['tipoAlteracoes'] = "Perfil";
 $_SESSION['alteracoesCertas'] = $arrayCerto;
 $_SESSION['alteracoesErradas'] = $arrayErrado;
 
-header('Location: editarPerfilInstituicao.php');
+header('Location: ../editarPerfilInstituicao.php');
 exit;
 
 ?>

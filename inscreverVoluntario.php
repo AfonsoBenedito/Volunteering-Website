@@ -10,11 +10,11 @@ if (isset($_SESSION['Logged'])){
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if (isset($_POST['LoginEmail'])){
 
-        include 'Login.php';
+        include 'includes/login.php';
 
         if (isset($_SESSION['Logged'])){
             header('Location: ./');
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $hashedPw = password_hash($RPass, PASSWORD_DEFAULT);
 
-            $comandoRegistoInput = "INSERT INTO voluntariosVC19 (CC, Username, Email, Pass, Nome, Apelido, Nascimento, Conducao, Verificado, ImagePath) VALUES ('$RCC','$RUsername','$REmail','$hashedPw','$RNome','$RApelido','$RNasc', '0','FALSE', 'assets/Imagens/perfilDefault.png')"; 
+            $comandoRegistoInput = "INSERT INTO voluntariosVC19 (CC, Username, Email, Pass, Nome, Apelido, Nascimento, Conducao, Verificado, ImagePath) VALUES ('$RCC','$RUsername','$REmail','$hashedPw','$RNome','$RApelido','$RNasc', '0','FALSE', 'assets/images/perfilDefault.png')"; 
 
             $resultadoRegistoInput = mysqli_query($conn, $comandoRegistoInput);
 
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <link rel="stylesheet" href="styles/geral.css">
         <link rel="stylesheet" href="styles/inscrever.css">
 
-        <link rel="shortcut icon" href="assets/Icons/logoBranco.png">
+        <link rel="shortcut icon" href="assets/icons/logoBranco.png">
 
         <title>Inscrever Voluntário</title>
 
@@ -231,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <header id="header">
 
             <div class="logo">
-                <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+                <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
             </div>
 
             <nav id='naviBar'>
@@ -247,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <!-- CONTEUDO UNICO DA PAGINA INSCREVER VOLUNTÁRIO -->
         <main>
             <div class="zonaInscricao">
-                <div class="zonaImgRegistar" style="background-image:url(assets/Imagens/zonaRegisto.jpg);">
+                <div class="zonaImgRegistar" style="background-image:url(assets/images/zonaRegisto.jpg);">
                     <h3>Inscrever-me como</h3>
                     <h1>Voluntário</h1>
                 </div>

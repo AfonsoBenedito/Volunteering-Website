@@ -2,14 +2,15 @@
 
 session_start();
 
-include 'connection.php';
+include '../includes/connection.php';
 
 $Distrito = htmlspecialchars($_POST['alterarDistrito']);
 $Concelho = htmlspecialchars($_POST['alterarConcelho']);
 $Freguesia = htmlspecialchars($_POST['alterarFreguesia']);
-$Telemovel = htmlspecialchars($_POST['alterarTelemovel']);
-$CC = htmlspecialchars($_POST['alterarCC']);
-$Conducao = htmlspecialchars($_POST['alterarConducao']);
+$Morada = htmlspecialchars($_POST['alterarMorada']);
+$NomeRepr = htmlspecialchars($_POST['alterarNomeRepresentante']);
+$EmailRepr = htmlspecialchars($_POST['alterarEmailRepresentante']);
+
 
 
 $UserEmail = $_SESSION['User'];
@@ -17,9 +18,10 @@ $UserEmail = $_SESSION['User'];
 $arrayCerto = array();
 $arrayErrado = array();
 
+
 if ($Distrito != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET Distrito = '$Distrito' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET Distrito = '$Distrito' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
@@ -32,7 +34,7 @@ if ($Distrito != ""){
 
 if ($Concelho != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET Concelho = '$Concelho' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET Concelho = '$Concelho' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
@@ -45,7 +47,7 @@ if ($Concelho != ""){
 
 if ($Freguesia != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET Freguesia = '$Freguesia' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET Freguesia = '$Freguesia' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
@@ -56,42 +58,42 @@ if ($Freguesia != ""){
     }
 }
 
-if ($Telemovel != ""){
+if ($Morada != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET Telemovel = '$Telemovel' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET Morada = '$Morada' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
     if ($resultadoMudar){
-        array_push($arrayCerto, 'Telemóvel');
+        array_push($arrayCerto, 'Morada');
     } else {   
-        array_push($arrayErrado, 'Telemóvel');
+        array_push($arrayErrado, 'Morada');
     }
 }
 
-if ($CC != ""){
+if ($NomeRepr != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET CC = '$CC' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET NomeRepresentante = '$NomeRepr' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
     if ($resultadoMudar){
-        array_push($arrayCerto, 'Cartão de Cidadão');
+        array_push($arrayCerto, 'Nome do Representante');
     } else {   
-        array_push($arrayErrado, 'Cartão de Cidadão');
+        array_push($arrayErrado, 'Nome do Representante');
     }
 }
 
-if ($Conducao != ""){
+if ($EmailRepr != ""){
 
-    $comandoSql = "UPDATE voluntariosVC19 SET Conducao = '$Conducao' WHERE (Email = '$UserEmail')";
+    $comandoSql = "UPDATE instituicoesVC19 SET EmailRepresentante = '$EmailRepr' WHERE (Email = '$UserEmail')";
 
     $resultadoMudar = mysqli_query($conn, $comandoSql);
 
     if ($resultadoMudar){
-        array_push($arrayCerto, 'Condução');
+        array_push($arrayCerto, 'Email do Representante');
     } else {   
-        array_push($arrayErrado, 'Condução');
+        array_push($arrayErrado, 'Email do Representante');
     }
 }
 
@@ -106,7 +108,9 @@ $_SESSION['tipoAlteracoes'] = "Dados";
 $_SESSION['alteracoesCertas'] = $arrayCerto;
 $_SESSION['alteracoesErradas'] = $arrayErrado;
 
-header('Location: editarPerfil.php');
+header('Location: ../editarPerfilInstituicao.php');
 exit;
+
+
 
 ?>

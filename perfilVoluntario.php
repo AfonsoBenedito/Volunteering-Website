@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_POST['LoginEmail'])){
-        include 'Login.php';
+        include 'includes/login.php';
     }
 
     if (!(isset($_GET["Username"]))){
@@ -13,7 +13,7 @@
     
     }
 
-    include "connection.php";
+    include 'includes/connection.php';
 
     $Username = $_GET["Username"];
 
@@ -52,7 +52,7 @@
 
         <title>Voluntário</title>
 
-        <link rel="shortcut icon" type="image/jpg" href="./assets/Icons/logoBranco.png">
+        <link rel="shortcut icon" type="image/jpg" href="./assets/icons/logoBranco.png">
 
     </head>
     
@@ -121,7 +121,7 @@
         <header id="header">
 
             <div class="logo">
-                <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+                <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
             </div>
 
             <nav id="naviBar">
@@ -172,7 +172,7 @@
             <div class="zonaPerfil">
                 <li class="zonasPerfil">
                     <div class="zonaFotoPerfil">
-                        <div class="fotoPerfil"><img id="fotoPerfilImg" src="assets/Imagens/perfilDefault.png"></div>
+                        <div class="fotoPerfil"><img id="fotoPerfilImg" src="assets/images/perfilDefault.png"></div>
                     </div>
                     <div class="zonaDescricaoPerfil">
                         <ul>

@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'connection.php';
+include '../includes/connection.php';
 
 $Username = htmlspecialchars($_POST['alterarUsername']);
 $Nome = htmlspecialchars($_POST['alterarNome']);
@@ -145,7 +145,7 @@ $_SESSION['tipoAlteracoes'] = "Perfil";
 $_SESSION['alteracoesCertas'] = $arrayCerto;
 $_SESSION['alteracoesErradas'] = $arrayErrado;
 
-header('Location: editarPerfil.php');
+header('Location: ../editarPerfil.php');
 exit;
 
 

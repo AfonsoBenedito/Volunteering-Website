@@ -1,0 +1,40 @@
+CREATE TABLE IF NOT EXISTS voluntariosVC19 (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    CC          VARCHAR(20)  NOT NULL UNIQUE,
+    Username    VARCHAR(50)  NOT NULL UNIQUE,
+    Email       VARCHAR(100) NOT NULL UNIQUE,
+    Pass        VARCHAR(255) NOT NULL,
+    Nome        VARCHAR(50)  NOT NULL,
+    Apelido     VARCHAR(50)  NOT NULL,
+    Nascimento  DATE         NOT NULL,
+    Conducao    TINYINT(1)   DEFAULT 0,
+    Verificado  VARCHAR(10)  DEFAULT 'FALSE',
+    ImagePath   VARCHAR(255) DEFAULT 'assets/images/perfilDefault.png',
+    Genero      VARCHAR(20),
+    Telemovel   VARCHAR(20),
+    Biografia   TEXT,
+    Intresses   TEXT,
+    PopAlvo     TEXT,
+    Disponibilidade TEXT,
+    Distrito    VARCHAR(50),
+    Concelho    VARCHAR(50),
+    Freguesia   VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS instituicoesVC19 (
+    id                  INT AUTO_INCREMENT PRIMARY KEY,
+    Nome                VARCHAR(100) NOT NULL UNIQUE,
+    NomeRepresentante   VARCHAR(50),
+    EmailRepresentante  VARCHAR(100),
+    Email               VARCHAR(100) NOT NULL UNIQUE,
+    Pass                VARCHAR(255) NOT NULL,
+    Telemovel           VARCHAR(20),
+    Morada              TEXT,
+    Distrito            VARCHAR(50),
+    Concelho            VARCHAR(50),
+    Freguesia           VARCHAR(50),
+    Descricao           TEXT,
+    Tipo                VARCHAR(50),
+    Verificado          VARCHAR(10)  DEFAULT 'FALSE',
+    ImagePath           VARCHAR(255) DEFAULT 'assets/images/perfilDefault.png'
+);

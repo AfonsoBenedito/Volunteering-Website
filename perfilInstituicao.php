@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_POST['LoginEmail'])){
-        include 'Login.php';
+        include 'includes/login.php';
     }
 
     if (!(isset($_GET["Nome"]))){
@@ -13,7 +13,7 @@
     
     }
 
-    include "connection.php";
+    include 'includes/connection.php';
 
     $nomeI = $_GET["Nome"];
 
@@ -54,7 +54,7 @@
 
         <title>Instituição</title>
 
-        <link rel="shortcut icon" type="image/jpg" href="./assets/Icons/logoBranco.png">
+        <link rel="shortcut icon" type="image/jpg" href="./assets/icons/logoBranco.png">
 
 
     </head>
@@ -124,7 +124,7 @@
         <header id="header">
 
             <div class="logo">
-                <a href="./"><img id="logotipoImg" src="assets/Icons/logoPreto.png"></a>
+                <a href="./"><img id="logotipoImg" src="assets/icons/logoPreto.png"></a>
             </div>
 
             <nav id="naviBar">
@@ -170,7 +170,7 @@
             
             <div class="zonaPerfil">
                 <li class="zonasPerfil">
-                    <div class="zonaFotoInstituicao"><img id="fotoPerfilInst" src="assets/Imagens/perfilDefault.png"></div>
+                    <div class="zonaFotoInstituicao"><img id="fotoPerfilInst" src="assets/images/perfilDefault.png"></div>
                 </li>
                 <li class="descricaoInst">
                     <h1 id="nome">Nome instituição</h1>

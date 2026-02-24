@@ -5,7 +5,7 @@ if (!(isset($_SESSION['Logged']))){
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        include "connection.php";
+        include __DIR__ . '/connection.php';
 
         $email = htmlspecialchars($_POST["LoginEmail"]);
         $pass = htmlspecialchars($_POST["LoginPass"]);
